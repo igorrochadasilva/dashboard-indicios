@@ -6,5 +6,12 @@
       "initialMenu": "Menu inicial",
       "monitoring": "Monitoramento"
     }
+  },
+  "myEvidence": {
+    "pageTitle": "Meus indícios",
+    "newEvidenceButton": "Novo indício"
+  },
+  "createEvidence": {
+    "pageTitle": "Criar indício"
   }
 }

@@ -4,6 +4,7 @@ export { HomeIcon } from './HomeIcon'
 export { MenuCollapseIcon } from './MenuCollapseIcon'
 export { MonitoringIcon } from './MonitoringIcon'
 export { MonogramIcon } from './MonogramIcon'
+export { PlusIcon } from './PlusIcon'
 
 import { HomeIcon } from './HomeIcon'
 import { MonitoringIcon } from './MonitoringIcon'

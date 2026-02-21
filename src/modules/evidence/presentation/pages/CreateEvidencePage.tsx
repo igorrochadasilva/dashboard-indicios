@@ -1,15 +1,14 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container } from '@mui/material'
+
+import { texts } from '@/app/texts'
+import { PageHeader } from '@/shared/components/PageHeader'
 
 export function CreateEvidencePage() {
   return (
     <Container maxWidth="lg">
       <Box py={4}>
-        <Typography variant="h4" color="text.primary" gutterBottom>
-          Criar indício
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Página de criação de indício. Conteúdo em construção.
-        </Typography>
+        <PageHeader title={texts.createEvidence.pageTitle} />
+        <Box mt={4}>Página de criação de indício. Conteúdo em construção.</Box>
       </Box>
     </Container>
   )
