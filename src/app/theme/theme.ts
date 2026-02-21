@@ -54,6 +54,7 @@ const theme = createTheme({
       sidebarBg: '#F3F3F7',
       sidebarItemActiveBg: '#E9EBF6',
       sidebarItemActiveBgHover: '#E9EBF6',
+      avatarBg: '#E8F1EA',
     },
   },
   typography: {

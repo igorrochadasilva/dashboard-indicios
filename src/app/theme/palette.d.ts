@@ -6,6 +6,7 @@ declare module '@mui/material/styles' {
       sidebarBg: string
       sidebarItemActiveBg: string
       sidebarItemActiveBgHover: string
+      avatarBg: string
     }
   }
 
@@ -16,6 +17,7 @@ declare module '@mui/material/styles' {
       sidebarBg?: string
       sidebarItemActiveBg?: string
       sidebarItemActiveBgHover?: string
+      avatarBg?: string
     }
   }
 }
