@@ -1,0 +1,10 @@
+{
+  "sidebar": {
+    "logoLabel": "RC06",
+    "menuCollapseAriaLabel": "Recolher menu",
+    "menu": {
+      "initialMenu": "Menu inicial",
+      "monitoring": "Monitoramento"
+    }
+  }
+}
