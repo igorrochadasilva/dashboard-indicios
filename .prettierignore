@@ -1,0 +1,23 @@
+# Build
+dist
+build
+.vite
+
+# Dependencies
+node_modules
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Cache
+*.tsbuildinfo
+.cache
+
+# Coverage
+coverage
+
+# Generated
+*.min.js
+*.min.css
