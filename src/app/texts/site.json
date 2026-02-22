@@ -90,6 +90,9 @@
       "similarEvidenceModalDescription": "Já existe um indício reportado com dados semelhantes. Avalie o caso antes de prosseguir, ou descarte a criação do indício.",
       "similarEvidenceModalClose": "Fechar",
       "similarEvidenceModalEvaluate": "Avaliar indício",
+      "similarAlertLine1": "Os dados com alerta são semelhantes aos de um indicio já reportado. Garanta que não ocorra o reporte duplicado de um indicio.",
+      "similarAlertLine2": "Caso o indicio seja único, mesmo que com dados semelhantes, ele pode ser reportado normalmente.",
+      "similarFieldHelper": "Dado semelhante ao já reportado",
       "submitButton": "Criar",
       "validationToastTitle": "Campos obrigatórios não preenchidos",
       "validationToastMessage": "Os campos em destaque precisam ser preenchidos antes de serem reportados à Interoperabilidade."

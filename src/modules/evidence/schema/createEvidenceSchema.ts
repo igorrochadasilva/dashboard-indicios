@@ -8,8 +8,18 @@ export const createEvidenceFormSchema = z.object({
   relatedActivity: z.string().min(1, 'Este campo deve ser preenchido.'),
   classification: z.string().min(1, 'Este campo deve ser preenchido.'),
   reason: z.string(),
-  transactionValue: z.string(),
-  contractValue: z.string(),
+  transactionValue: z
+    .string()
+    .refine(
+      (val) => val === '' || /^\d*([.,]\d*)?$/.test(val),
+      'Apenas números são permitidos.'
+    ),
+  contractValue: z
+    .string()
+    .refine(
+      (val) => val === '' || /^\d*([.,]\d*)?$/.test(val),
+      'Apenas números são permitidos.'
+    ),
   typableLine: z.string(),
   occurrencePlace: z.string(),
 })

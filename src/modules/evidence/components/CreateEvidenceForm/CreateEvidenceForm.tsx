@@ -5,6 +5,7 @@ import {
   FormControl,
   FormHelperText,
   Grid,
+  InputAdornment,
   InputLabel,
   MenuItem,
   Paper,
@@ -27,8 +28,33 @@ import {
 
 const t = texts.createEvidence.form
 
+const WARNING_ICON_COLOR = '#E87500'
+
+function SimilarDataWarningIcon() {
+  return (
+    <Box
+      component="svg"
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      fill="none"
+      sx={{ color: WARNING_ICON_COLOR, flexShrink: 0 }}
+    >
+      <path
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Box>
+  )
+}
+
 export type CreateEvidenceFormProps = {
   onSubmit?: (data: CreateEvidenceFormValues) => void
+  /** Quando true, exibe ícone de atenção e "Dado semelhante ao já reportado" nos campos data e valor da transação */
+  similarDataWarning?: boolean
 }
 
 export type CreateEvidenceFormHandle = {
@@ -39,7 +65,10 @@ export type CreateEvidenceFormHandle = {
 export const CreateEvidenceForm = forwardRef<
   CreateEvidenceFormHandle,
   CreateEvidenceFormProps
->(function CreateEvidenceForm({ onSubmit: onSubmitProp }, ref) {
+>(function CreateEvidenceForm(
+  { onSubmit: onSubmitProp, similarDataWarning = false },
+  ref
+) {
   const theme = useTheme()
   const custom = (
     theme.palette as {
@@ -167,7 +196,33 @@ export const CreateEvidenceForm = forwardRef<
                 sx: { backgroundColor: 'background.paper', px: 0.5 },
               }}
               error={Boolean(errors.occurrenceDateTime)}
-              helperText={errors.occurrenceDateTime?.message}
+              helperText={
+                errors.occurrenceDateTime?.message ??
+                (similarDataWarning ? t.similarFieldHelper : undefined)
+              }
+              slotProps={{
+                input: {
+                  sx: {
+                    color: 'text.primary',
+                    ...(similarDataWarning && { position: 'relative' }),
+                  },
+                  ...(similarDataWarning && {
+                    endAdornment: (
+                      <InputAdornment
+                        position="end"
+                        sx={{
+                          position: 'absolute',
+                          right: 40,
+                          top: '50%',
+                          transform: 'translateY(-50%)',
+                        }}
+                      >
+                        <SimilarDataWarningIcon />
+                      </InputAdornment>
+                    ),
+                  }),
+                },
+              }}
               sx={{
                 ...inputSx,
                 ...errorFieldSx,
@@ -175,9 +230,13 @@ export const CreateEvidenceForm = forwardRef<
                   ...inputSx['& .MuiOutlinedInput-root'],
                   height: 40,
                 },
-              }}
-              slotProps={{
-                input: { sx: { color: 'text.primary' } },
+                ...(similarDataWarning && !errors.occurrenceDateTime
+                  ? {
+                      '& .MuiFormHelperText-root': {
+                        color: inputMuted,
+                      },
+                    }
+                  : {}),
               }}
             />
           </Grid>
@@ -362,15 +421,36 @@ export const CreateEvidenceForm = forwardRef<
                   size="small"
                   inputMode="decimal"
                   error={Boolean(errors.transactionValue)}
-                  helperText={errors.transactionValue?.message}
+                  helperText={
+                    errors.transactionValue?.message ??
+                    (similarDataWarning ? t.similarFieldHelper : undefined)
+                  }
                   onChange={(e) => {
                     const v = e.target.value.replace(/[^\d,.]/g, '')
                     field.onChange(v)
                   }}
+                  InputProps={
+                    similarDataWarning
+                      ? {
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <SimilarDataWarningIcon />
+                            </InputAdornment>
+                          ),
+                        }
+                      : undefined
+                  }
                   sx={{
                     ...inputSx,
                     ...errorFieldSx,
                     '& .MuiOutlinedInput-root': { height: 40 },
+                    ...(similarDataWarning && !errors.transactionValue
+                      ? {
+                          '& .MuiFormHelperText-root': {
+                            color: inputMuted,
+                          },
+                        }
+                      : {}),
                   }}
                 />
               )}
@@ -396,7 +476,12 @@ export const CreateEvidenceForm = forwardRef<
                   sx={{
                     ...inputSx,
                     ...errorFieldSx,
-                    '& .MuiOutlinedInput-root': { height: 40 },
+                    '& .MuiOutlinedInput-root': {
+                      height: 40,
+                      bgcolor: 'background.paper',
+                      '&.Mui-focused': { bgcolor: 'background.paper' },
+                      '&:hover': { bgcolor: 'background.paper' },
+                    },
                   }}
                 />
               )}
@@ -409,7 +494,15 @@ export const CreateEvidenceForm = forwardRef<
               label={t.typableLine}
               fullWidth
               size="small"
-              sx={{ ...inputSx, '& .MuiOutlinedInput-root': { height: 40 } }}
+              sx={{
+                ...inputSx,
+                '& .MuiOutlinedInput-root': {
+                  height: 40,
+                  bgcolor: 'background.paper',
+                  '&.Mui-focused': { bgcolor: 'background.paper' },
+                  '&:hover': { bgcolor: 'background.paper' },
+                },
+              }}
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -418,7 +511,15 @@ export const CreateEvidenceForm = forwardRef<
               label={t.occurrencePlace}
               fullWidth
               size="small"
-              sx={{ ...inputSx, '& .MuiOutlinedInput-root': { height: 40 } }}
+              sx={{
+                ...inputSx,
+                '& .MuiOutlinedInput-root': {
+                  height: 40,
+                  bgcolor: 'background.paper',
+                  '&.Mui-focused': { bgcolor: 'background.paper' },
+                  '&:hover': { bgcolor: 'background.paper' },
+                },
+              }}
             />
           </Grid>
         </Grid>

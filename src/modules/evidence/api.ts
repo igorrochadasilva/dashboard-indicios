@@ -1,4 +1,6 @@
 import type {
+  CreateEvidencePayload,
+  EvidenceRecord,
   GetEvidencesParams,
   GetEvidencesResult,
   ReportedEvidenceRow,
@@ -65,4 +67,73 @@ export async function getActivities(): Promise<
   SubmissionsByActivityDataPoint[]
 > {
   return fetchJson<SubmissionsByActivityDataPoint[]>(endpoints.activities)
+}
+
+/**
+ * Formata "YYYY-MM-DDTHH:mm" (datetime-local) para "DD/MM/YYYY às HH:mm:00".
+ */
+export function formatOccurrenceDateForApi(occurrenceDateTime: string): string {
+  if (!occurrenceDateTime) return ''
+  const d = new Date(occurrenceDateTime)
+  const day = String(d.getDate()).padStart(2, '0')
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  const year = d.getFullYear()
+  const hours = String(d.getHours()).padStart(2, '0')
+  const minutes = String(d.getMinutes()).padStart(2, '0')
+  return `${day}/${month}/${year} às ${hours}:${minutes}:00`
+}
+
+/**
+ * Reduz data ao formato canônico "DD/MM/YYYY HH:mm" para comparação (evita problema de encoding "às" e segundos).
+ */
+function toCanonicalDate(occurrenceDateStr: string): string {
+  const s = (occurrenceDateStr ?? '').trim()
+  if (!s) return ''
+  const withoutSeconds = s.replace(/:(\d{2})$/, '')
+  const withoutAux = withoutSeconds.replace(/\s*às\s*/i, ' ')
+  return withoutAux.trim()
+}
+
+/**
+ * Verifica se já existe indício com mesma data/hora da ocorrência e valor da transação.
+ * Usa getEvidences (mesmo contrato da listagem) e compara no cliente; um match já indica duplicata.
+ */
+export async function checkDuplicateEvidence(
+  occurrenceDateTime: string,
+  transactionValue: string
+): Promise<boolean> {
+  const formattedApi = formatOccurrenceDateForApi(occurrenceDateTime)
+  const canonicalDate = toCanonicalDate(formattedApi)
+  const normalizedValue = String(transactionValue ?? '').trim()
+
+  const { data } = await getEvidences({ page: 1, limit: 1000 })
+  const list = data as EvidenceRecord[]
+
+  return list.some((item) => {
+    const itemDate = toCanonicalDate(item.occurrenceDate ?? '')
+    const itemValue = String(item.transactionValue ?? '').trim()
+    return itemDate === canonicalDate && itemValue === normalizedValue
+  })
+}
+
+/**
+ * Cria um novo indício.
+ */
+export async function createEvidence(
+  payload: CreateEvidencePayload
+): Promise<EvidenceRecord> {
+  const res = await fetch(endpoints.evidences, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      ...payload,
+      source: payload.source ?? 'form',
+      transactionId: `gen-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+      executorName: (payload as { executorName?: string }).executorName ?? '',
+      executorDocument:
+        (payload as { executorDocument?: string }).executorDocument ?? '',
+    }),
+  })
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`)
+  return res.json() as Promise<EvidenceRecord>
 }
