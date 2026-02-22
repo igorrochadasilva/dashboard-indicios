@@ -9,6 +9,9 @@ declare module '@mui/material/styles' {
       avatarBg: string
       filterBoxBorder: string
       inputMuted: string
+      sourceChipLightBg: string
+      tableRowStriped: string
+      tableHeader: string
     }
   }
 
@@ -22,6 +25,9 @@ declare module '@mui/material/styles' {
       avatarBg?: string
       filterBoxBorder?: string
       inputMuted?: string
+      sourceChipLightBg?: string
+      tableRowStriped?: string
+      tableHeader?: string
     }
   }
 }

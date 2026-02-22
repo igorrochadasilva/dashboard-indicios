@@ -5,6 +5,7 @@ export { MenuCollapseIcon } from './MenuCollapseIcon'
 export { MonitoringIcon } from './MonitoringIcon'
 export { MonogramIcon } from './MonogramIcon'
 export { PlusIcon } from './PlusIcon'
+export { EllipsisIcon } from './EllipsisIcon'
 export { SearchIcon } from './SearchIcon'
 
 import { HomeIcon } from './HomeIcon'

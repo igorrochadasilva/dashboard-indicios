@@ -19,7 +19,22 @@
       "all": "Todas",
       "fraudAttempt": "Tentativa de fraude",
       "fraudOccurrence": "Ocorrência de fraude"
-    }
+    },
+    "reportedEvidenceTitle": "Indícios reportados",
+    "tableColumns": {
+      "transactionId": "ID da transação",
+      "reportedVia": "Indício reportado via",
+      "classification": "Classificação",
+      "executor": "Executor",
+      "occurrenceDate": "Data da ocorrência"
+    },
+    "sourceLabels": {
+      "form": "Formulário",
+      "csv": "CSV",
+      "api": "API",
+      "antifraud": "Antifraude"
+    },
+    "rowsPerPageLabel": "Linhas por página:"
   },
   "createEvidence": {
     "pageTitle": "Criar indício"

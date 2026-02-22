@@ -2,7 +2,10 @@ import { Box, Container } from '@mui/material'
 
 import { ROUTES } from '@/app/constants'
 import { texts } from '@/app/texts'
-import { EvidenceFilters } from '@/modules/evidence/presentation/components'
+import {
+  EvidenceFilters,
+  ReportedEvidenceTable,
+} from '@/modules/evidence/presentation/components'
 import { PageHeader } from '@/shared/components/PageHeader'
 
 export function MyEvidencePage() {
@@ -21,6 +24,7 @@ export function MyEvidencePage() {
           actionTo={ROUTES.createEvidence}
         />
         <EvidenceFilters />
+        <ReportedEvidenceTable />
       </Box>
     </Container>
   )

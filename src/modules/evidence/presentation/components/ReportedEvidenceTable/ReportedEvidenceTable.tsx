@@ -1,0 +1,110 @@
+import { useState } from 'react'
+import {
+  Box,
+  Paper,
+  Table,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  Typography,
+  useTheme,
+} from '@mui/material'
+
+import '@/app/theme/theme-augment'
+
+import { texts } from '@/app/texts'
+import { MOCK_REPORTED_EVIDENCE_ROWS } from '@/modules/evidence/presentation/mocks'
+
+import { ReportedEvidenceTableHeader } from './ReportedEvidenceTableHeader'
+import { ReportedEvidenceTableRow } from './ReportedEvidenceTableRow'
+
+import type { ReportedEvidenceRow } from './types'
+
+type ReportedEvidenceTableProps = {
+  rows?: ReportedEvidenceRow[]
+}
+
+export function ReportedEvidenceTable({
+  rows = MOCK_REPORTED_EVIDENCE_ROWS,
+}: ReportedEvidenceTableProps) {
+  const theme = useTheme()
+  const custom = (
+    theme.palette as {
+      custom?: { tableRowStriped?: string; filterBoxBorder?: string }
+    }
+  ).custom
+  const stripedBg = custom?.tableRowStriped ?? '#F9FAFB'
+  const borderColor = custom?.filterBoxBorder ?? '#DEDEE2'
+
+  const [page, setPage] = useState(0)
+  const [rowsPerPage, setRowsPerPage] = useState(10)
+
+  const paginatedRows = rows.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  )
+  const totalRows = rows.length
+
+  return (
+    <Box>
+      <Typography
+        component="h2"
+        sx={{
+          fontWeight: 600,
+          fontSize: 16,
+          lineHeight: '24px',
+          letterSpacing: 0,
+          color: 'text.primary',
+          mb: 2,
+        }}
+      >
+        {texts.myEvidence.reportedEvidenceTitle}
+      </Typography>
+      <TableContainer
+        component={Paper}
+        sx={{
+          borderRadius: '8px',
+          border: '1px solid',
+          borderColor,
+          overflow: 'hidden',
+        }}
+      >
+        <Table size="medium">
+          <TableHead>
+            <ReportedEvidenceTableHeader />
+          </TableHead>
+          <TableBody>
+            {paginatedRows.map((row, index) => (
+              <ReportedEvidenceTableRow
+                key={row.id}
+                row={row}
+                index={index}
+                stripedBg={stripedBg}
+              />
+            ))}
+          </TableBody>
+        </Table>
+        <TablePagination
+          component="div"
+          count={totalRows}
+          page={page}
+          onPageChange={(_, newPage) => setPage(newPage)}
+          rowsPerPage={rowsPerPage}
+          onRowsPerPageChange={(e) => {
+            setRowsPerPage(Number(e.target.value))
+            setPage(0)
+          }}
+          rowsPerPageOptions={[10, 25, 50]}
+          labelRowsPerPage={texts.myEvidence.rowsPerPageLabel}
+          sx={{
+            borderTop: 1,
+            borderColor: 'divider',
+            '& .MuiTablePagination-selectLabel, & .MuiTablePagination-displayedRows':
+              { fontSize: 14, color: 'text.primary' },
+          }}
+        />
+      </TableContainer>
+    </Box>
+  )
+}

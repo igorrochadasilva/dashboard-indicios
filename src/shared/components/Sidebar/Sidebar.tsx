@@ -128,7 +128,7 @@ export function Sidebar() {
                 }}
               >
                 <ListItemIcon sx={{ minWidth: 40 }}>
-                  <Icon active={active} />
+                  <Icon />
                 </ListItemIcon>
                 <Typography
                   sx={{

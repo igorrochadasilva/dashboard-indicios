@@ -57,6 +57,9 @@ const theme = createTheme({
       avatarBg: '#E8F1EA',
       filterBoxBorder: '#DEDEE2',
       inputMuted: '#A1A1A4',
+      sourceChipLightBg: '#E6F2E7',
+      tableRowStriped: '#F9FAFB',
+      tableHeader: '#646466',
     },
   },
   typography: {
