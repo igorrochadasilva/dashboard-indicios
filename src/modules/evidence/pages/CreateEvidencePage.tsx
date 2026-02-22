@@ -6,7 +6,7 @@ import {
   CreateEvidenceForm,
   CreateEvidenceFormActions,
   type CreateEvidenceFormHandle,
-} from '@/modules/evidence/presentation/components'
+} from '@/modules/evidence/components'
 import { PageHeader } from '@/shared/components/PageHeader'
 
 export function CreateEvidencePage() {

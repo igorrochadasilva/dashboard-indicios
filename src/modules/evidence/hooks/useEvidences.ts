@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getEvidences, type GetEvidencesParams } from '../../data'
+import { getEvidences } from '../api'
+
+import type { GetEvidencesParams } from '../types'
 
 const EVIDENCES_QUERY_KEY = ['evidences']
 

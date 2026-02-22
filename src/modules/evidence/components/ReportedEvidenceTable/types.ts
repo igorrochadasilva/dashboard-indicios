@@ -2,4 +2,4 @@ export {
   EvidenceSource,
   EvidenceClassification,
   type ReportedEvidenceRow,
-} from '@/modules/evidence/domain'
+} from '@/modules/evidence/types'

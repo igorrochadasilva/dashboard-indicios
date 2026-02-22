@@ -1,20 +1,15 @@
-import { evidenceApiConfig } from '../config'
-
 import type {
+  GetEvidencesParams,
+  GetEvidencesResult,
   ReportedEvidenceRow,
   SubmissionsByActivityDataPoint,
-} from '../../domain'
+} from './types'
 
-export type GetEvidencesParams = {
-  page?: number
-  limit?: number
-  transactionId?: string
-  classification?: string
-}
+const BASE = 'http://localhost:3001'
 
-export type GetEvidencesResult = {
-  data: ReportedEvidenceRow[]
-  totalCount: number
+const endpoints = {
+  evidences: `${BASE}/evidences`,
+  activities: `${BASE}/activities`,
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
@@ -35,7 +30,7 @@ function buildEvidencesUrl(params: GetEvidencesParams): string {
   if (params.classification?.trim()) {
     search.set('classification', params.classification.trim())
   }
-  return `${evidenceApiConfig.endpoints.evidences}?${search.toString()}`
+  return `${endpoints.evidences}?${search.toString()}`
 }
 
 type EvidencesApiResponse =
@@ -69,7 +64,5 @@ export async function getEvidences(
 export async function getActivities(): Promise<
   SubmissionsByActivityDataPoint[]
 > {
-  return fetchJson<SubmissionsByActivityDataPoint[]>(
-    evidenceApiConfig.endpoints.activities
-  )
+  return fetchJson<SubmissionsByActivityDataPoint[]>(endpoints.activities)
 }

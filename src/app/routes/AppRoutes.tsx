@@ -1,10 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router'
 
 import { ROUTES } from '@/app/constants'
-import {
-  CreateEvidencePage,
-  MyEvidencePage,
-} from '@/modules/evidence/presentation/pages'
+import { CreateEvidencePage, MyEvidencePage } from '@/modules/evidence/pages'
 import { AppLayout } from '@/shared/components'
 
 export function AppRoutes() {

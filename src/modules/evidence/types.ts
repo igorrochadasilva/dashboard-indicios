@@ -36,3 +36,15 @@ export type SubmissionsByActivityDataPoint = {
   saque?: number
   transferencia?: number
 }
+
+export type GetEvidencesParams = {
+  page?: number
+  limit?: number
+  transactionId?: string
+  classification?: string
+}
+
+export type GetEvidencesResult = {
+  data: ReportedEvidenceRow[]
+  totalCount: number
+}

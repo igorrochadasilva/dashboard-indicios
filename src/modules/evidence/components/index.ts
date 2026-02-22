@@ -1,3 +1,4 @@
+export { EvidencePageSkeleton } from './EvidencePageSkeleton/EvidencePageSkeleton'
 export { EvidenceFilters } from './EvidenceFilters'
 export type {
   EvidenceFiltersProps,
