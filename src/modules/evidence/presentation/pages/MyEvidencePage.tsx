@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material'
+import { Box, CircularProgress, Container } from '@mui/material'
 
 import { ROUTES } from '@/app/constants'
 import { texts } from '@/app/texts'
@@ -7,9 +7,20 @@ import {
   ReportedEvidenceTable,
   SubmissionsByActivityChart,
 } from '@/modules/evidence/presentation/components'
+import {
+  useActivities,
+  useEvidences,
+} from '@/modules/evidence/presentation/hooks'
 import { PageHeader } from '@/shared/components/PageHeader'
 
 export function MyEvidencePage() {
+  const evidencesQuery = useEvidences()
+  const activitiesQuery = useActivities()
+
+  const evidences = evidencesQuery.data ?? []
+  const activities = activitiesQuery.data ?? []
+  const isLoading = evidencesQuery.isLoading || activitiesQuery.isLoading
+
   return (
     <Container maxWidth="lg">
       <Box
@@ -25,8 +36,16 @@ export function MyEvidencePage() {
           actionTo={ROUTES.createEvidence}
         />
         <EvidenceFilters />
-        <ReportedEvidenceTable />
-        <SubmissionsByActivityChart />
+        {isLoading ? (
+          <Box display="flex" justifyContent="center" py={4}>
+            <CircularProgress size={32} />
+          </Box>
+        ) : (
+          <>
+            <ReportedEvidenceTable rows={evidences} />
+            <SubmissionsByActivityChart data={activities} />
+          </>
+        )}
       </Box>
     </Container>
   )

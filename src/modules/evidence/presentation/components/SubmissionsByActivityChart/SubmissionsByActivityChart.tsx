@@ -12,7 +12,6 @@ import {
 import '@/app/theme/theme-augment'
 
 import { texts } from '@/app/texts'
-import { MOCK_SUBMISSIONS_BY_ACTIVITY } from '@/modules/evidence/presentation/mocks'
 
 import type { SubmissionsByActivityDataPoint } from './types'
 
@@ -31,7 +30,7 @@ type SubmissionsByActivityChartProps = {
 }
 
 export function SubmissionsByActivityChart({
-  data = MOCK_SUBMISSIONS_BY_ACTIVITY,
+  data = [],
 }: SubmissionsByActivityChartProps) {
   const theme = useTheme()
   const custom = (

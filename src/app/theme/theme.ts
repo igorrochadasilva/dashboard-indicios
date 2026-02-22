@@ -101,10 +101,16 @@ const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
+        html: { boxSizing: 'border-box' },
+        '*, *::before, *::after': { boxSizing: 'inherit' },
         body: {
+          margin: 0,
+          minWidth: '320px',
+          minHeight: '100vh',
           fontFamily: '"Source Sans 3", "Source Sans Pro", sans-serif',
           color: '#3C3C3D',
         },
+        '#root': { minHeight: '100vh' },
       },
     },
     MuiButton: {

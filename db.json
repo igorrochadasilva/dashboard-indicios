@@ -1,0 +1,81 @@
+{
+  "evidences": [
+    {
+      "id": "1",
+      "transactionId": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8g9h0i",
+      "source": "form",
+      "classification": "fraudAttempt",
+      "executorName": "Nome Sobrenome",
+      "executorDocument": "000.000.000-00",
+      "occurrenceDate": "01/01/2024 às 11:11:11"
+    },
+    {
+      "id": "2",
+      "transactionId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "source": "csv",
+      "classification": "fraudOccurrence",
+      "executorName": "Nome da empresa env...",
+      "executorDocument": "00.000.000/0000-00",
+      "occurrenceDate": "02/01/2024 às 14:22:33"
+    },
+    {
+      "id": "3",
+      "transactionId": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "source": "api",
+      "classification": "fraudAttempt",
+      "executorName": "Outro Executor",
+      "executorDocument": "111.111.111-11",
+      "occurrenceDate": "03/01/2024 às 09:00:00"
+    },
+    {
+      "id": "4",
+      "transactionId": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "source": "antifraud",
+      "classification": "fraudOccurrence",
+      "executorName": "Empresa XYZ",
+      "executorDocument": "11.111.111/1111-11",
+      "occurrenceDate": "04/01/2024 às 16:45:00"
+    }
+  ],
+  "activities": [
+    { "date": "01/07", "aberturaConta": 3 },
+    { "date": "02/07", "aberturaConta": 3 },
+    { "date": "03/07" },
+    { "date": "04/07" },
+    { "date": "05/07" },
+    { "date": "06/07" },
+    { "date": "07/07", "aberturaConta": 9.5 },
+    { "date": "08/07", "aberturaConta": 9.5 },
+    { "date": "09/07" },
+    { "date": "10/07" },
+    { "date": "11/07", "aberturaConta": 17 },
+    { "date": "12/07", "aberturaConta": 17 },
+    { "date": "13/07", "aberturaConta": 24.5 },
+    { "date": "14/07", "aberturaConta": 24.5 },
+    { "date": "15/07", "aberturaConta": 11 },
+    { "date": "16/07", "aberturaConta": 11 },
+    { "date": "17/07" },
+    { "date": "18/07" },
+    { "date": "19/07" },
+    { "date": "20/07" },
+    { "date": "21/07", "aberturaConta": 4.5 },
+    { "date": "22/07", "aberturaConta": 4.5 },
+    { "date": "23/07" },
+    { "date": "24/07" },
+    {
+      "date": "25/07",
+      "aberturaConta": 5.5,
+      "pix": 1,
+      "saque": 0.5,
+      "contratacaoCredito": 1,
+      "manutencaoConta": 1,
+      "pagamento": 0.5,
+      "transferencia": 1
+    },
+    { "date": "26/07" },
+    { "date": "27/07" },
+    { "date": "28/07" },
+    { "date": "29/07" },
+    { "date": "30/07" }
+  ]
+}

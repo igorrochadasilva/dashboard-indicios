@@ -14,7 +14,6 @@ import {
 import '@/app/theme/theme-augment'
 
 import { texts } from '@/app/texts'
-import { MOCK_REPORTED_EVIDENCE_ROWS } from '@/modules/evidence/presentation/mocks'
 
 import { ReportedEvidenceTableHeader } from './ReportedEvidenceTableHeader'
 import { ReportedEvidenceTableRow } from './ReportedEvidenceTableRow'
@@ -26,7 +25,7 @@ type ReportedEvidenceTableProps = {
 }
 
 export function ReportedEvidenceTable({
-  rows = MOCK_REPORTED_EVIDENCE_ROWS,
+  rows = [],
 }: ReportedEvidenceTableProps) {
   const theme = useTheme()
   const custom = (

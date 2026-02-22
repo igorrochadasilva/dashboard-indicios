@@ -20,7 +20,7 @@ export function CreateEvidenceFormActions({
     fontSize: 16,
     lineHeight: '24px',
     letterSpacing: 0,
-    textTransform: 'none' as const,
+    textTransform: 'none',
   }
 
   return (
