@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 import monitorIcon from '@/assets/icons/monitor.svg'
 
-export function MonitoringIcon({ active: _active }: { active: boolean }) {
+export function MonitoringIcon() {
   return (
     <Box
       component="img"

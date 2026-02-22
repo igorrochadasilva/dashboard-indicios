@@ -24,14 +24,20 @@ export function TopBar() {
         borderColor: 'divider',
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '20px',
+        }}
+      >
         <IconButton
           aria-label="Notificações"
           size="medium"
           sx={{ color: 'primary.main' }}
         >
           <Badge color="error" variant="dot">
-            <BellIcon active={false} />
+            <BellIcon />
           </Badge>
         </IconButton>
 
@@ -65,7 +71,7 @@ export function TopBar() {
           >
             NS
           </Avatar>
-          <ChevronDownIcon active={false} />
+          <ChevronDownIcon />
         </Box>
       </Box>
     </Box>

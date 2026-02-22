@@ -39,7 +39,7 @@ export function PageHeader({ title, actionLabel, actionTo }: PageHeaderProps) {
           to={actionTo}
           variant="contained"
           color="primary"
-          startIcon={<PlusIcon active={false} />}
+          startIcon={<PlusIcon />}
           sx={{
             width: 158,
             height: 40,

@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 import plusIcon from '@/assets/icons/plus-icon.svg'
 
-export function PlusIcon({ active: _active }: { active: boolean }) {
+export function PlusIcon() {
   return (
     <Box
       component="img"

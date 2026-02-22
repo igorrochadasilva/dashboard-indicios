@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 import homeIcon from '@/assets/icons/home.svg'
 
-export function HomeIcon({ active: _active }: { active: boolean }) {
+export function HomeIcon() {
   return (
     <Box
       component="img"

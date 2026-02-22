@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 import chevronDownIcon from '@/assets/icons/chevron-down.svg'
 
-export function ChevronDownIcon({ active: _active }: { active: boolean }) {
+export function ChevronDownIcon() {
   return (
     <Box
       component="img"

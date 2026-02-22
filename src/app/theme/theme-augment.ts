@@ -7,6 +7,8 @@ declare module '@mui/material/styles' {
       sidebarItemActiveBg: string
       sidebarItemActiveBgHover: string
       avatarBg: string
+      filterBoxBorder: string
+      inputMuted: string
     }
   }
 
@@ -18,6 +20,8 @@ declare module '@mui/material/styles' {
       sidebarItemActiveBg?: string
       sidebarItemActiveBgHover?: string
       avatarBg?: string
+      filterBoxBorder?: string
+      inputMuted?: string
     }
   }
 }

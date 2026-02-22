@@ -9,7 +9,17 @@
   },
   "myEvidence": {
     "pageTitle": "Meus indícios",
-    "newEvidenceButton": "Novo indício"
+    "newEvidenceButton": "Novo indício",
+    "filterTitle": "Filtrar indício",
+    "clearFilters": "Limpar filtros",
+    "transactionIdPlaceholder": "ID da transação",
+    "classificationPlaceholder": "Classificação",
+    "applyButton": "Aplicar",
+    "classificationOptions": {
+      "all": "Todas",
+      "fraudAttempt": "Tentativa de fraude",
+      "fraudOccurrence": "Ocorrência de fraude"
+    }
   },
   "createEvidence": {
     "pageTitle": "Criar indício"

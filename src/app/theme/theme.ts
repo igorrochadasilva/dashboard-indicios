@@ -55,6 +55,8 @@ const theme = createTheme({
       sidebarItemActiveBg: '#E9EBF6',
       sidebarItemActiveBgHover: '#E9EBF6',
       avatarBg: '#E8F1EA',
+      filterBoxBorder: '#DEDEE2',
+      inputMuted: '#A1A1A4',
     },
   },
   typography: {

@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 import bellIcon from '@/assets/icons/bell.svg'
 
-export function BellIcon({ active: _active }: { active: boolean }) {
+export function BellIcon() {
   return (
     <Box
       component="img"
