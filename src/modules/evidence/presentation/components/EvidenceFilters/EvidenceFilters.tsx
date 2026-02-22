@@ -148,7 +148,13 @@ export function EvidenceFilters({ onApply, onClear }: EvidenceFiltersProps) {
           size="small"
           sx={{
             width: 360,
-            '& .MuiOutlinedInput-root': { height: 40 },
+            '& .MuiOutlinedInput-root': {
+              height: 40,
+              border: '1px solid',
+              borderColor: inputMuted,
+              borderRadius: 1,
+              '& fieldset': { border: 'none' },
+            },
             '& .MuiInputLabel-root, & .MuiSelect-select': {
               color: inputMuted,
             },

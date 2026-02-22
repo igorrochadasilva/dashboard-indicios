@@ -15,6 +15,7 @@ export function AppLayout() {
           display: 'flex',
           flexDirection: 'column',
           bgcolor: 'background.default',
+          marginLeft: '240px',
         }}
       >
         <TopBar />

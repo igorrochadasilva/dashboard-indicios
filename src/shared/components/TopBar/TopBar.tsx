@@ -17,18 +17,21 @@ export function TopBar() {
         height: 88,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'flex-end',
-        px: 2,
+        justifyContent: 'center',
         bgcolor: 'background.paper',
         borderBottom: 1,
         borderColor: 'divider',
+        width: '100%',
       }}
     >
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'end',
           gap: '20px',
+          width: '1120px',
+          px: 3,
         }}
       >
         <IconButton
