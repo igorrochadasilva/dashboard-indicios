@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
   Box,
   Paper,
@@ -22,12 +21,23 @@ import type { ReportedEvidenceRow } from './types'
 
 type ReportedEvidenceTableProps = {
   rows?: ReportedEvidenceRow[]
+  totalCount?: number
+  page?: number
+  rowsPerPage?: number
+  onPageChange?: (page: number) => void
+  onRowsPerPageChange?: (rowsPerPage: number) => void
 }
 
 export function ReportedEvidenceTable({
   rows = [],
+  totalCount = 0,
+  page = 0,
+  rowsPerPage = 10,
+  onPageChange,
+  onRowsPerPageChange,
 }: ReportedEvidenceTableProps) {
   const theme = useTheme()
+  const rowsList = Array.isArray(rows) ? rows : []
   const custom = (
     theme.palette as {
       custom?: { tableRowStriped?: string; filterBoxBorder?: string }
@@ -35,15 +45,6 @@ export function ReportedEvidenceTable({
   ).custom
   const stripedBg = custom?.tableRowStriped ?? '#F9FAFB'
   const borderColor = custom?.filterBoxBorder ?? '#DEDEE2'
-
-  const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(10)
-
-  const paginatedRows = rows.slice(
-    page * rowsPerPage,
-    page * rowsPerPage + rowsPerPage
-  )
-  const totalRows = rows.length
 
   return (
     <Box>
@@ -74,7 +75,7 @@ export function ReportedEvidenceTable({
             <ReportedEvidenceTableHeader />
           </TableHead>
           <TableBody>
-            {paginatedRows.map((row, index) => (
+            {rowsList.map((row, index) => (
               <ReportedEvidenceTableRow
                 key={row.id}
                 row={row}
@@ -86,13 +87,14 @@ export function ReportedEvidenceTable({
         </Table>
         <TablePagination
           component="div"
-          count={totalRows}
+          count={totalCount}
           page={page}
-          onPageChange={(_, newPage) => setPage(newPage)}
+          onPageChange={(_, newPage) => onPageChange?.(newPage)}
           rowsPerPage={rowsPerPage}
           onRowsPerPageChange={(e) => {
-            setRowsPerPage(Number(e.target.value))
-            setPage(0)
+            const value = Number(e.target.value)
+            onRowsPerPageChange?.(value)
+            onPageChange?.(0)
           }}
           rowsPerPageOptions={[10, 25, 50]}
           labelRowsPerPage={texts.myEvidence.rowsPerPageLabel}

@@ -13,7 +13,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 
 import '@/app/theme/theme-augment'
 import { texts } from '@/app/texts'
@@ -101,8 +101,8 @@ export const CreateEvidenceForm = forwardRef<
 
   const {
     register,
+    control,
     handleSubmit,
-    watch,
     formState: { errors },
     reset,
   } = useForm<CreateEvidenceFormValues>({
@@ -190,15 +190,21 @@ export const CreateEvidenceForm = forwardRef<
               <InputLabel id="create-evidence-channel">
                 {t.occurrenceChannel}
               </InputLabel>
-              <Select
-                {...register('occurrenceChannel')}
-                labelId="create-evidence-channel"
-                label={t.occurrenceChannel}
-                value={watch('occurrenceChannel') ?? ''}
-                sx={{ color: 'text.primary' }}
-              >
-                <MenuItem value="">{t.occurrenceChannelNone}</MenuItem>
-              </Select>
+              <Controller
+                name="occurrenceChannel"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    labelId="create-evidence-channel"
+                    label={t.occurrenceChannel}
+                    value={field.value ?? ''}
+                    sx={{ color: 'text.primary' }}
+                  >
+                    <MenuItem value="">{t.occurrenceChannelNone}</MenuItem>
+                  </Select>
+                )}
+              />
             </FormControl>
           </Grid>
 
@@ -249,24 +255,30 @@ export const CreateEvidenceForm = forwardRef<
               <InputLabel id="create-evidence-related-activity">
                 {t.relatedActivity}*
               </InputLabel>
-              <Select
-                {...register('relatedActivity')}
-                labelId="create-evidence-related-activity"
-                label={`${t.relatedActivity}*`}
-                value={watch('relatedActivity') ?? ''}
-                sx={{ color: 'text.primary' }}
-              >
-                <MenuItem value="">
-                  <em>{t.selectPlaceholder}</em>
-                </MenuItem>
-                {Object.entries(t.relatedActivityOptions).map(
-                  ([value, label]) => (
-                    <MenuItem key={value} value={value}>
-                      {label}
+              <Controller
+                name="relatedActivity"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    labelId="create-evidence-related-activity"
+                    label={`${t.relatedActivity}*`}
+                    value={field.value ?? ''}
+                    sx={{ color: 'text.primary' }}
+                  >
+                    <MenuItem value="">
+                      <em>{t.selectPlaceholder}</em>
                     </MenuItem>
-                  )
+                    {Object.entries(t.relatedActivityOptions).map(
+                      ([value, label]) => (
+                        <MenuItem key={value} value={value}>
+                          {label}
+                        </MenuItem>
+                      )
+                    )}
+                  </Select>
                 )}
-              </Select>
+              />
               <FormHelperText>{errors.relatedActivity?.message}</FormHelperText>
             </FormControl>
           </Grid>
@@ -284,24 +296,30 @@ export const CreateEvidenceForm = forwardRef<
               <InputLabel id="create-evidence-classification">
                 {t.classification}*
               </InputLabel>
-              <Select
-                {...register('classification')}
-                labelId="create-evidence-classification"
-                label={`${t.classification}*`}
-                value={watch('classification') ?? ''}
-                sx={{ color: 'text.primary' }}
-              >
-                <MenuItem value="">
-                  <em>{t.selectPlaceholder}</em>
-                </MenuItem>
-                {Object.entries(t.classificationOptions).map(
-                  ([value, label]) => (
-                    <MenuItem key={value} value={value}>
-                      {label}
+              <Controller
+                name="classification"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    labelId="create-evidence-classification"
+                    label={`${t.classification}*`}
+                    value={field.value ?? ''}
+                    sx={{ color: 'text.primary' }}
+                  >
+                    <MenuItem value="">
+                      <em>{t.selectPlaceholder}</em>
                     </MenuItem>
-                  )
+                    {Object.entries(t.classificationOptions).map(
+                      ([value, label]) => (
+                        <MenuItem key={value} value={value}>
+                          {label}
+                        </MenuItem>
+                      )
+                    )}
+                  </Select>
                 )}
-              </Select>
+              />
               <FormHelperText>{errors.classification?.message}</FormHelperText>
             </FormControl>
           </Grid>

@@ -1,2 +1,7 @@
 export { evidenceApiConfig } from './config'
-export { getEvidences, getActivities } from './repositories'
+export {
+  getEvidences,
+  getActivities,
+  type GetEvidencesParams,
+  type GetEvidencesResult,
+} from './repositories'

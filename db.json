@@ -35,6 +35,105 @@
       "executorName": "Empresa XYZ",
       "executorDocument": "11.111.111/1111-11",
       "occurrenceDate": "04/01/2024 às 16:45:00"
+    },
+    {
+      "id": "5",
+      "transactionId": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+      "source": "form",
+      "classification": "fraudOccurrence",
+      "executorName": "Maria Silva",
+      "executorDocument": "222.222.222-22",
+      "occurrenceDate": "05/01/2024 às 08:30:00"
+    },
+    {
+      "id": "6",
+      "transactionId": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+      "source": "csv",
+      "classification": "fraudAttempt",
+      "executorName": "João Santos",
+      "executorDocument": "333.333.333-33",
+      "occurrenceDate": "06/01/2024 às 12:15:22"
+    },
+    {
+      "id": "7",
+      "transactionId": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+      "source": "api",
+      "classification": "fraudOccurrence",
+      "executorName": "Tech Solutions LTDA",
+      "executorDocument": "22.222.222/2222-22",
+      "occurrenceDate": "07/01/2024 às 17:00:00"
+    },
+    {
+      "id": "8",
+      "transactionId": "a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+      "source": "antifraud",
+      "classification": "fraudAttempt",
+      "executorName": "Ana Oliveira",
+      "executorDocument": "444.444.444-44",
+      "occurrenceDate": "08/01/2024 às 09:45:10"
+    },
+    {
+      "id": "9",
+      "transactionId": "b8c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+      "source": "form",
+      "classification": "fraudAttempt",
+      "executorName": "Pedro Costa",
+      "executorDocument": "555.555.555-55",
+      "occurrenceDate": "09/01/2024 às 14:20:33"
+    },
+    {
+      "id": "10",
+      "transactionId": "c9d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+      "source": "csv",
+      "classification": "fraudOccurrence",
+      "executorName": "Financeira ABC S.A.",
+      "executorDocument": "33.333.333/3333-33",
+      "occurrenceDate": "10/01/2024 às 11:00:00"
+    },
+    {
+      "id": "11",
+      "transactionId": "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+      "source": "api",
+      "classification": "fraudAttempt",
+      "executorName": "Carlos Mendes",
+      "executorDocument": "666.666.666-66",
+      "occurrenceDate": "11/01/2024 às 16:55:00"
+    },
+    {
+      "id": "12",
+      "transactionId": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "source": "antifraud",
+      "classification": "fraudOccurrence",
+      "executorName": "Luciana Ferreira",
+      "executorDocument": "777.777.777-77",
+      "occurrenceDate": "12/01/2024 às 08:10:15"
+    },
+    {
+      "id": "13",
+      "transactionId": "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+      "source": "form",
+      "classification": "fraudOccurrence",
+      "executorName": "Ramos & Associados",
+      "executorDocument": "44.444.444/4444-44",
+      "occurrenceDate": "13/01/2024 às 13:40:00"
+    },
+    {
+      "id": "14",
+      "transactionId": "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+      "source": "csv",
+      "classification": "fraudAttempt",
+      "executorName": "Fernanda Lima",
+      "executorDocument": "888.888.888-88",
+      "occurrenceDate": "14/01/2024 às 10:25:42"
+    },
+    {
+      "id": "15",
+      "transactionId": "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+      "source": "api",
+      "classification": "fraudAttempt",
+      "executorName": "Roberto Alves",
+      "executorDocument": "999.999.999-99",
+      "occurrenceDate": "15/01/2024 às 18:00:00"
     }
   ],
   "activities": [

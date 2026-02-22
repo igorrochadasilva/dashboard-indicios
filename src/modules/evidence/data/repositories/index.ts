@@ -1,1 +1,6 @@
-export { getEvidences, getActivities } from './evidenceRepository'
+export {
+  getEvidences,
+  getActivities,
+  type GetEvidencesParams,
+  type GetEvidencesResult,
+} from './evidenceRepository'

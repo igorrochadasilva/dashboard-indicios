@@ -155,19 +155,36 @@ export function EvidenceFilters({ onApply, onClear }: EvidenceFiltersProps) {
               borderRadius: 1,
               '& fieldset': { border: 'none' },
             },
-            '& .MuiInputLabel-root, & .MuiSelect-select': {
+            '& .MuiInputLabel-root': {
               color: inputMuted,
+              '&.MuiInputLabel-shrink': {
+                backgroundColor: 'background.paper',
+                px: 0.5,
+              },
+            },
+            '& .MuiSelect-select': {
+              color: 'text.primary',
             },
           }}
         >
-          <InputLabel id="evidence-filter-classification">
+          <InputLabel id="evidence-filter-classification" shrink>
             {t.classificationPlaceholder}
           </InputLabel>
           <Select
             labelId="evidence-filter-classification"
             value={classification}
             label={t.classificationPlaceholder}
+            displayEmpty
             onChange={(e) => setClassification(e.target.value)}
+            renderValue={(value) => {
+              if (value === '' || value === undefined)
+                return t.classificationOptions.all
+              if (value === 'fraudAttempt')
+                return t.classificationOptions.fraudAttempt
+              if (value === 'fraudOccurrence')
+                return t.classificationOptions.fraudOccurrence
+              return value
+            }}
           >
             <MenuItem value="">{t.classificationOptions.all}</MenuItem>
             <MenuItem value="fraudAttempt">
