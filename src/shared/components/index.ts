@@ -9,7 +9,5 @@ export {
   PATH_TO_ICON,
 } from './Icons'
 export { PageHeader } from './PageHeader'
-export type { PageHeaderProps } from './PageHeader'
 export { Sidebar } from './Sidebar'
 export { Toast } from './Toast'
-export type { ToastProps } from './Toast'
