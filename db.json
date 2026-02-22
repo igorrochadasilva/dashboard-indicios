@@ -134,33 +134,153 @@
       "executorName": "Roberto Alves",
       "executorDocument": "999.999.999-99",
       "occurrenceDate": "15/01/2024 às 18:00:00"
+    },
+    {
+      "id": "245b",
+      "occurrenceDate": "10/10/1990 às 10:10:00",
+      "transactionValue": "1233",
+      "occurrenceChannel": "",
+      "institutionCnpj": "86.319.890/0001-14",
+      "institutionName": "Data Rudder LTDA",
+      "relatedActivity": "transferenciasEntreContas",
+      "classification": "fraudOccurrence",
+      "reason": "teste",
+      "contractValue": "teste",
+      "typableLine": "",
+      "occurrencePlace": "casa",
+      "source": "form",
+      "transactionId": "gen-1771796596663-yb3jr3a",
+      "executorName": "",
+      "executorDocument": ""
+    },
+    {
+      "id": "6028",
+      "occurrenceDate": "10/10/1990 às 10:10:00",
+      "transactionValue": "1233",
+      "occurrenceChannel": "",
+      "institutionCnpj": "86.319.890/0001-14",
+      "institutionName": "Data Rudder LTDA",
+      "relatedActivity": "ted",
+      "classification": "fraudAttempt",
+      "reason": "teste",
+      "contractValue": "100",
+      "typableLine": "teste",
+      "occurrencePlace": "casa",
+      "source": "form",
+      "transactionId": "gen-1771797657427-oqnnp0a",
+      "executorName": "",
+      "executorDocument": ""
     }
   ],
   "activities": [
-    { "date": "01/07", "aberturaConta": 3 },
-    { "date": "02/07", "aberturaConta": 3 },
-    { "date": "03/07" },
-    { "date": "04/07" },
-    { "date": "05/07" },
-    { "date": "06/07" },
-    { "date": "07/07", "aberturaConta": 9.5 },
-    { "date": "08/07", "aberturaConta": 9.5 },
-    { "date": "09/07" },
-    { "date": "10/07" },
-    { "date": "11/07", "aberturaConta": 17 },
-    { "date": "12/07", "aberturaConta": 17 },
-    { "date": "13/07", "aberturaConta": 24.5 },
-    { "date": "14/07", "aberturaConta": 24.5 },
-    { "date": "15/07", "aberturaConta": 11 },
-    { "date": "16/07", "aberturaConta": 11 },
-    { "date": "17/07" },
-    { "date": "18/07" },
-    { "date": "19/07" },
-    { "date": "20/07" },
-    { "date": "21/07", "aberturaConta": 4.5 },
-    { "date": "22/07", "aberturaConta": 4.5 },
-    { "date": "23/07" },
-    { "date": "24/07" },
+    {
+      "date": "01/07",
+      "aberturaConta": 3,
+      "id": "5884"
+    },
+    {
+      "date": "02/07",
+      "aberturaConta": 3,
+      "id": "0d53"
+    },
+    {
+      "date": "03/07",
+      "id": "16ab"
+    },
+    {
+      "date": "04/07",
+      "id": "696e"
+    },
+    {
+      "date": "05/07",
+      "id": "a5cf"
+    },
+    {
+      "date": "06/07",
+      "id": "b64f"
+    },
+    {
+      "date": "07/07",
+      "aberturaConta": 9.5,
+      "id": "a874"
+    },
+    {
+      "date": "08/07",
+      "aberturaConta": 9.5,
+      "id": "390b"
+    },
+    {
+      "date": "09/07",
+      "id": "35ab"
+    },
+    {
+      "date": "10/07",
+      "id": "f0f9"
+    },
+    {
+      "date": "11/07",
+      "aberturaConta": 17,
+      "id": "4e4b"
+    },
+    {
+      "date": "12/07",
+      "aberturaConta": 17,
+      "id": "fb39"
+    },
+    {
+      "date": "13/07",
+      "aberturaConta": 24.5,
+      "id": "1692"
+    },
+    {
+      "date": "14/07",
+      "aberturaConta": 24.5,
+      "id": "cceb"
+    },
+    {
+      "date": "15/07",
+      "aberturaConta": 11,
+      "id": "701f"
+    },
+    {
+      "date": "16/07",
+      "aberturaConta": 11,
+      "id": "73f3"
+    },
+    {
+      "date": "17/07",
+      "id": "0208"
+    },
+    {
+      "date": "18/07",
+      "id": "2891"
+    },
+    {
+      "date": "19/07",
+      "id": "7a63"
+    },
+    {
+      "date": "20/07",
+      "id": "ac45"
+    },
+    {
+      "date": "21/07",
+      "aberturaConta": 4.5,
+      "id": "3132"
+    },
+    {
+      "date": "22/07",
+      "aberturaConta": 4.5,
+      "id": "71bb"
+    },
+    {
+      "date": "23/07",
+      "id": "9fad"
+    },
+    {
+      "date": "24/07",
+      "id": "cc26"
+    },
     {
       "date": "25/07",
       "aberturaConta": 5.5,
@@ -169,12 +289,28 @@
       "contratacaoCredito": 1,
       "manutencaoConta": 1,
       "pagamento": 0.5,
-      "transferencia": 1
+      "transferencia": 1,
+      "id": "c621"
     },
-    { "date": "26/07" },
-    { "date": "27/07" },
-    { "date": "28/07" },
-    { "date": "29/07" },
-    { "date": "30/07" }
+    {
+      "date": "26/07",
+      "id": "6d72"
+    },
+    {
+      "date": "27/07",
+      "id": "8bd7"
+    },
+    {
+      "date": "28/07",
+      "id": "a9b4"
+    },
+    {
+      "date": "29/07",
+      "id": "5109"
+    },
+    {
+      "date": "30/07",
+      "id": "66c9"
+    }
   ]
 }

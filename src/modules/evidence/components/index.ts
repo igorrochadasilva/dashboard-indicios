@@ -11,6 +11,12 @@ export type {
 } from './CreateEvidenceForm/CreateEvidenceForm'
 export { CreateEvidenceFormActions } from './CreateEvidenceFormActions/CreateEvidenceFormActions'
 export type { CreateEvidenceFormActionsProps } from './CreateEvidenceFormActions/CreateEvidenceFormActions'
+export { DiscardEvidenceModal } from './DiscardEvidenceModal'
+export type { DiscardEvidenceModalProps } from './DiscardEvidenceModal'
+export { EvidenceConfirmModal } from './EvidenceConfirmModal'
+export type { EvidenceConfirmModalProps } from './EvidenceConfirmModal'
+export { SimilarEvidenceModal } from './SimilarEvidenceModal'
+export type { SimilarEvidenceModalProps } from './SimilarEvidenceModal'
 export { ReportedEvidenceTable } from './ReportedEvidenceTable'
 export type {
   EvidenceClassification,

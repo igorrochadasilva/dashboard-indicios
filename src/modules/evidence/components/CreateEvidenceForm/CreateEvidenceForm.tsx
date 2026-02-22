@@ -351,21 +351,55 @@ export const CreateEvidenceForm = forwardRef<
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
-            <TextField
-              {...register('transactionValue')}
-              label={t.transactionValue}
-              fullWidth
-              size="small"
-              sx={{ ...inputSx, '& .MuiOutlinedInput-root': { height: 40 } }}
+            <Controller
+              name="transactionValue"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  label={t.transactionValue}
+                  fullWidth
+                  size="small"
+                  inputMode="decimal"
+                  error={Boolean(errors.transactionValue)}
+                  helperText={errors.transactionValue?.message}
+                  onChange={(e) => {
+                    const v = e.target.value.replace(/[^\d,.]/g, '')
+                    field.onChange(v)
+                  }}
+                  sx={{
+                    ...inputSx,
+                    ...errorFieldSx,
+                    '& .MuiOutlinedInput-root': { height: 40 },
+                  }}
+                />
+              )}
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
-            <TextField
-              {...register('contractValue')}
-              label={t.contractValue}
-              fullWidth
-              size="small"
-              sx={{ ...inputSx, '& .MuiOutlinedInput-root': { height: 40 } }}
+            <Controller
+              name="contractValue"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  label={t.contractValue}
+                  fullWidth
+                  size="small"
+                  inputMode="decimal"
+                  error={Boolean(errors.contractValue)}
+                  helperText={errors.contractValue?.message}
+                  onChange={(e) => {
+                    const v = e.target.value.replace(/[^\d,.]/g, '')
+                    field.onChange(v)
+                  }}
+                  sx={{
+                    ...inputSx,
+                    ...errorFieldSx,
+                    '& .MuiOutlinedInput-root': { height: 40 },
+                  }}
+                />
+              )}
             />
           </Grid>
 

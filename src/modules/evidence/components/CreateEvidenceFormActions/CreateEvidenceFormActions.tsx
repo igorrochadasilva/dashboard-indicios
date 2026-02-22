@@ -7,11 +7,13 @@ const t = texts.createEvidence.form
 export type CreateEvidenceFormActionsProps = {
   onDiscard: () => void
   onSubmit: () => void
+  disabled?: boolean
 }
 
 export function CreateEvidenceFormActions({
   onDiscard,
   onSubmit,
+  disabled = false,
 }: CreateEvidenceFormActionsProps) {
   const theme = useTheme()
   const buttonTextSx = {
@@ -47,6 +49,7 @@ export function CreateEvidenceFormActions({
         <Button
           type="button"
           variant="outlined"
+          disabled={disabled}
           onClick={onDiscard}
           sx={{
             width: 168,
@@ -68,6 +71,7 @@ export function CreateEvidenceFormActions({
           type="button"
           variant="contained"
           color="primary"
+          disabled={disabled}
           onClick={onSubmit}
           sx={{
             width: 168,
