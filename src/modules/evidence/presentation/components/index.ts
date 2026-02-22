@@ -3,6 +3,13 @@ export type {
   EvidenceFiltersProps,
   EvidenceFiltersValues,
 } from './EvidenceFilters'
+export { CreateEvidenceForm } from './CreateEvidenceForm/CreateEvidenceForm'
+export type {
+  CreateEvidenceFormHandle,
+  CreateEvidenceFormProps,
+} from './CreateEvidenceForm/CreateEvidenceForm'
+export { CreateEvidenceFormActions } from './CreateEvidenceFormActions/CreateEvidenceFormActions'
+export type { CreateEvidenceFormActionsProps } from './CreateEvidenceFormActions/CreateEvidenceFormActions'
 export { ReportedEvidenceTable } from './ReportedEvidenceTable'
 export type {
   EvidenceClassification,

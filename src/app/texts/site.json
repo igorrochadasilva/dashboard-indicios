@@ -47,6 +47,42 @@
     }
   },
   "createEvidence": {
-    "pageTitle": "Criar indício"
+    "pageTitle": "Criar indício",
+    "form": {
+      "sectionTitle": "Informações gerais",
+      "occurrenceDateTime": "Data e hora da ocorrência",
+      "occurrenceChannel": "Canal da ocorrência",
+      "occurrenceChannelNone": "Nenhum",
+      "institutionCnpj": "CNPJ da instituição responsável",
+      "institutionName": "Razão social da instituição responsável",
+      "relatedActivity": "Atividade relacionada da ocorrência",
+      "classification": "Classificação do indício",
+      "selectPlaceholder": "Selecione",
+      "relatedActivityOptions": {
+        "aberturaConta": "Abertura de conta de depósitos ou conta de pagamento",
+        "manutencaoConta": "Manutenção de conta de depósitos ou conta de pagamento",
+        "contratacaoCredito": "Contratação de operação de crédito",
+        "transferenciasEntreContas": "Transferências entre contas na própria instituição",
+        "ted": "Transferência Eletrônica Disponível (TED)",
+        "pagamentoCheque": "Transações de pagamento com emprego de cheque",
+        "pix": "Transações de pagamento instantâneo (PIX)",
+        "doc": "Transferências por meio de Documento de Crédito (DOC)",
+        "boletos": "Boletos de pagamento",
+        "saques": "Saques de recursos em espécie"
+      },
+      "classificationOptions": {
+        "fraudOccurrence": "Ocorrência de fraude",
+        "fraudAttempt": "Tentativa de fraude"
+      },
+      "reason": "Motivo",
+      "transactionValue": "Valor da transação",
+      "contractValue": "Valor do contrato",
+      "typableLine": "Linha digitável",
+      "occurrencePlace": "Local da ocorrência",
+      "discardButton": "Descartar criação",
+      "submitButton": "Criar",
+      "validationToastTitle": "Campos obrigatórios não preenchidos",
+      "validationToastMessage": "Os campos em destaque precisam ser preenchidos antes de serem reportados à Interoperabilidade."
+    }
   }
 }

@@ -63,6 +63,9 @@ const theme = createTheme({
       chartManutencaoConta: '#778C44',
       chartPix: '#469D43',
       chartSaque: '#B6D2BD',
+      toastBg: '#FBEBE9',
+      toastTitle: '#A02817',
+      toastBorder: 'rgba(213, 53, 31, 0.3)',
     },
   },
   typography: {

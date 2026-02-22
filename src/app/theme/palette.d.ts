@@ -15,6 +15,9 @@ declare module '@mui/material/styles' {
       chartManutencaoConta: string
       chartPix: string
       chartSaque: string
+      toastBg: string
+      toastTitle: string
+      toastBorder: string
     }
   }
 
@@ -34,6 +37,9 @@ declare module '@mui/material/styles' {
       chartManutencaoConta?: string
       chartPix?: string
       chartSaque?: string
+      toastBg?: string
+      toastTitle?: string
+      toastBorder?: string
     }
   }
 }

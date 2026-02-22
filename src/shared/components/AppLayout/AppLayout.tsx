@@ -1,13 +1,17 @@
 import { Box } from '@mui/material'
-import { Outlet } from 'react-router'
+import { Outlet, useLocation } from 'react-router'
 
+import { ROUTES } from '@/app/constants'
 import { Sidebar } from '@/shared/components/Sidebar'
 import { TopBar } from '@/shared/components/TopBar'
 
 export function AppLayout() {
+  const location = useLocation()
+  const showSidebar = location.pathname !== ROUTES.createEvidence
+
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-      <Sidebar />
+      {showSidebar && <Sidebar />}
       <Box
         sx={{
           flex: 1,
@@ -15,7 +19,7 @@ export function AppLayout() {
           display: 'flex',
           flexDirection: 'column',
           bgcolor: 'background.default',
-          marginLeft: '240px',
+          marginLeft: showSidebar ? '240px' : 0,
         }}
       >
         <TopBar />
