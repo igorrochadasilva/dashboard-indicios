@@ -5,6 +5,7 @@ import { texts } from '@/app/texts'
 import {
   EvidenceFilters,
   ReportedEvidenceTable,
+  SubmissionsByActivityChart,
 } from '@/modules/evidence/presentation/components'
 import { PageHeader } from '@/shared/components/PageHeader'
 
@@ -25,6 +26,7 @@ export function MyEvidencePage() {
         />
         <EvidenceFilters />
         <ReportedEvidenceTable />
+        <SubmissionsByActivityChart />
       </Box>
     </Container>
   )

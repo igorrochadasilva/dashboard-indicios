@@ -58,8 +58,11 @@ const theme = createTheme({
       filterBoxBorder: '#DEDEE2',
       inputMuted: '#A1A1A4',
       sourceChipLightBg: '#E6F2E7',
-      tableRowStriped: '#F9FAFB',
+      tableRowStriped: '#F7F7FB',
       tableHeader: '#646466',
+      chartManutencaoConta: '#778C44',
+      chartPix: '#469D43',
+      chartSaque: '#B6D2BD',
     },
   },
   typography: {

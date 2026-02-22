@@ -34,7 +34,17 @@
       "api": "API",
       "antifraud": "Antifraude"
     },
-    "rowsPerPageLabel": "Linhas por página:"
+    "rowsPerPageLabel": "Linhas por página:",
+    "submissionsByActivityTitle": "Envios por atividade relacionada",
+    "chartLegend": {
+      "aberturaConta": "Abertura de conta",
+      "contratacaoCredito": "Contratação de crédito",
+      "manutencaoConta": "Manutenção de conta",
+      "pagamento": "Pagamento",
+      "pix": "PIX",
+      "saque": "Saque",
+      "transferencia": "Transferência"
+    }
   },
   "createEvidence": {
     "pageTitle": "Criar indício"

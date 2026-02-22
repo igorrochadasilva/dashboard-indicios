@@ -9,3 +9,5 @@ export type {
   EvidenceSource,
   ReportedEvidenceRow,
 } from './ReportedEvidenceTable'
+export { SubmissionsByActivityChart } from './SubmissionsByActivityChart/SubmissionsByActivityChart'
+export type { SubmissionsByActivityDataPoint } from './SubmissionsByActivityChart/types'

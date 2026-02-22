@@ -12,6 +12,9 @@ declare module '@mui/material/styles' {
       sourceChipLightBg: string
       tableRowStriped: string
       tableHeader: string
+      chartManutencaoConta: string
+      chartPix: string
+      chartSaque: string
     }
   }
 
@@ -28,6 +31,9 @@ declare module '@mui/material/styles' {
       sourceChipLightBg?: string
       tableRowStriped?: string
       tableHeader?: string
+      chartManutencaoConta?: string
+      chartPix?: string
+      chartSaque?: string
     }
   }
 }
