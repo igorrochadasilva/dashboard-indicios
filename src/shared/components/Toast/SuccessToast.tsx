@@ -1,21 +1,24 @@
-import { Box, IconButton, Paper, Typography } from '@mui/material'
+import { Box, IconButton, Paper, Typography, useTheme } from '@mui/material'
 
 import closeIcon from '@/assets/icons/close-icon.svg'
 
-import { SuccessCheckIcon } from './SuccessCheckIcon'
-
-const styles = {
-  bg: '#E8F5E9',
-  text: '#1B7331',
-  border: 'rgba(27, 115, 49, 0.3)',
-}
+import { SuccessCheckIcon } from '../Icons/SuccessCheckIcon'
 
 type SuccessToastProps = {
   message: string
   onClose: () => void
 }
 
+type SuccessToastPalette = {
+  successToastBg: string
+  successToastText: string
+  successToastBorder: string
+}
+
 export function SuccessToast({ message, onClose }: SuccessToastProps) {
+  const theme = useTheme()
+  const custom = (theme.palette as { custom?: SuccessToastPalette }).custom
+
   return (
     <Paper
       elevation={0}
@@ -25,22 +28,22 @@ export function SuccessToast({ message, onClose }: SuccessToastProps) {
         width: 484,
         height: 56,
         border: '1px solid',
-        borderColor: styles.border,
+        borderColor: custom?.successToastBorder,
         borderRadius: 1,
         overflow: 'hidden',
-        bgcolor: styles.bg,
+        bgcolor: custom?.successToastBg,
         px: 2,
       }}
     >
       <SuccessCheckIcon size={24} />
       <Typography
         sx={{
-          fontFamily: '"Source Sans 3", "Source Sans Pro", sans-serif',
+          fontFamily: theme.typography.fontFamily,
           fontWeight: 600,
           fontSize: 16,
           lineHeight: '24px',
           letterSpacing: 0,
-          color: styles.text,
+          color: custom?.successToastText,
           flex: 1,
           minWidth: 0,
           ml: 1.5,

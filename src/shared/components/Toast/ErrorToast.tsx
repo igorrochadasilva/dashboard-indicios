@@ -5,12 +5,6 @@ import '@/app/theme/theme-augment'
 import closeIcon from '@/assets/icons/close-icon.svg'
 import redCloseIcon from '@/assets/icons/red-close-icon.svg'
 
-const defaultErrorStyles = {
-  bg: '#FBEBE9',
-  title: '#A02817',
-  border: 'rgba(213, 53, 31, 0.3)',
-}
-
 type ErrorToastProps = {
   title: string
   message: string
@@ -26,12 +20,6 @@ export function ErrorToast({ title, message, onClose }: ErrorToastProps) {
     }
   ).custom
 
-  const styles = {
-    bg: custom?.toastBg ?? defaultErrorStyles.bg,
-    title: custom?.toastTitle ?? defaultErrorStyles.title,
-    border: custom?.toastBorder ?? defaultErrorStyles.border,
-  }
-
   return (
     <Paper
       elevation={0}
@@ -41,10 +29,10 @@ export function ErrorToast({ title, message, onClose }: ErrorToastProps) {
         width: 484,
         height: 112,
         border: '1px solid',
-        borderColor: styles.border,
+        borderColor: custom?.toastBorder,
         borderRadius: 1,
         overflow: 'hidden',
-        bgcolor: styles.bg,
+        bgcolor: custom?.toastBg,
       }}
     >
       <Box sx={{ width: 4, alignSelf: 'stretch', bgcolor: error.main }} />
@@ -80,7 +68,7 @@ export function ErrorToast({ title, message, onClose }: ErrorToastProps) {
               fontSize: 16,
               lineHeight: '24px',
               letterSpacing: 0,
-              color: styles.title,
+              color: custom?.toastTitle,
               flex: 1,
               minWidth: 0,
             }}

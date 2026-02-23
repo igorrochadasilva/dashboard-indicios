@@ -66,6 +66,9 @@ const theme = createTheme({
       toastBg: '#FBEBE9',
       toastTitle: '#A02817',
       toastBorder: 'rgba(213, 53, 31, 0.3)',
+      successToastBg: '#E8F5E9',
+      successToastText: '#1B7331',
+      successToastBorder: 'rgba(27, 115, 49, 0.3)',
     },
   },
   typography: {

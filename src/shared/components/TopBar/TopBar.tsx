@@ -51,7 +51,17 @@ export function TopBar() {
             size="medium"
             sx={{ color: 'primary.main' }}
           >
-            <Badge color="error" variant="dot">
+            <Badge
+              color="error"
+              variant="dot"
+              sx={{
+                span: {
+                  position: 'absolute',
+                  right: '6px',
+                  top: '4px',
+                },
+              }}
+            >
               <BellIcon />
             </Badge>
           </IconButton>

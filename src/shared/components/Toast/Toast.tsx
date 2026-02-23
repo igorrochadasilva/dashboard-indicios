@@ -11,8 +11,6 @@ export type ToastProps = {
   variant?: 'error' | 'success'
 }
 
-const snackbarSx = { '&.MuiSnackbar-root': { bottom: 24, right: 24 } }
-
 export function Toast({
   open,
   onClose,
@@ -28,7 +26,7 @@ export function Toast({
       autoHideDuration={null}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       onClose={onClose}
-      sx={snackbarSx}
+      sx={{ '&.MuiSnackbar-root': { bottom: 24, right: 24 } }}
     >
       <Box component="span" sx={{ display: 'contents' }}>
         {isSuccess ? (
