@@ -1,75 +1,101 @@
-# React + TypeScript + Vite
+# Dashboard Indícios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dashboard para gestão de indícios: listagem com filtros e paginação, criação de indícios e visualização de atividades por gráfico.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript**
+- **Vite 7** — build e dev server
+- **Material UI (MUI) 7** — componentes e tema
+- **React Query** — dados e cache
+- **React Hook Form** + **Zod** — formulários e validação
+- **React Router 7** — rotas
+- **Recharts** — gráfico de atividades
+- **Zustand** — estado global
 
-## React Compiler
+## Pré-requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+
+- npm (ou pnpm/yarn)
 
-## Expanding the ESLint configuration
+## Como rodar
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. Instalar dependências
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Subir o backend (API mock)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O projeto usa **json-server** como API local. Em um terminal:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run server
 ```
 
-# dashboard-indicios
+Isso sobe o servidor em `http://localhost:3001` com os dados em `db.json`.
+
+### 3. Subir o frontend
+
+Em outro terminal:
+
+```bash
+npm run dev
+```
+
+Acesse **http://localhost:5173**.
+
+## Scripts
+
+| Comando                | Descrição                             |
+| ---------------------- | ------------------------------------- |
+| `npm run dev`          | Inicia o dev server (Vite)            |
+| `npm run build`        | Build de produção (TypeScript + Vite) |
+| `npm run preview`      | Preview do build (`dist`)             |
+| `npm run server`       | Inicia o json-server (API mock)       |
+| `npm run test`         | Roda os testes (Vitest)               |
+| `npm run lint`         | ESLint                                |
+| `npm run lint:fix`     | ESLint com correção automática        |
+| `npm run format`       | Prettier (formatação)                 |
+| `npm run format:check` | Verifica formatação (CI)              |
+
+## Estrutura do projeto
+
+- **`src/app/`** — rotas, tema, constantes e textos
+- **`src/shared/`** — layout (Sidebar, TopBar), Toast, PageHeader, ícones
+- **`src/modules/evidence/`** — feature de indícios: API, hooks, formulário, tabela, gráfico, páginas
+- **`src/assets/`** — ícones e assets estáticos
+- **`tests/`** — setup, test-utils e testes (Vitest + Testing Library)
+
+A arquitetura é descrita em **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
+
+## Build de produção
+
+O build usa code-splitting e chunks por vendor:
+
+- **App shell** — layout e rotas
+- **vendor-mui** — apenas componentes MUI utilizados (tree-shaking)
+- **vendor-react** / **vendor-react-query** — carregados no início
+- **vendor-recharts** — carregado só na rota “Meus indícios” (gráfico)
+- **CreateEvidencePage** / **MyEvidencePage** — carregadas sob demanda
+
+```bash
+npm run build
+```
+
+Saída em `dist/`. Para testar: `npm run preview`.
+
+## Testes
+
+```bash
+npm run test
+```
+
+- **Vitest** + **React Testing Library**
+- Setup em `tests/setup.ts` (jest-dom, mocks de SVG)
+- `tests/test-utils.tsx` — `render` com ThemeProvider e MemoryRouter
+
+## Licença
+
+Projeto privado.
