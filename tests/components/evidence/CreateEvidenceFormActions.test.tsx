@@ -4,7 +4,6 @@ import { CreateEvidenceFormActions } from '@/modules/evidence/components/CreateE
 
 import { render, screen } from '../../test-utils'
 
-
 describe('CreateEvidenceFormActions', () => {
   it('matches snapshot', () => {
     const { container } = render(

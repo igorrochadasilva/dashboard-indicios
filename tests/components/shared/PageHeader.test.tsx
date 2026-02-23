@@ -4,7 +4,6 @@ import { PageHeader } from '@/shared/components/PageHeader/PageHeader'
 
 import { render, screen } from '../../test-utils'
 
-
 describe('PageHeader', () => {
   it('matches snapshot with title only', () => {
     const { container } = render(<PageHeader title="Meus indícios" />)

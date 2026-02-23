@@ -4,7 +4,6 @@ import { SimilarDataWarningIcon } from '@/shared/components/Icons/SimilarDataWar
 
 import { render } from '../../test-utils'
 
-
 describe('SimilarDataWarningIcon', () => {
   it('matches snapshot', () => {
     const { container } = render(<SimilarDataWarningIcon />)

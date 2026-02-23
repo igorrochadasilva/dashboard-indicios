@@ -4,7 +4,6 @@ import { DiscardEvidenceModal } from '@/modules/evidence/components/DiscardEvide
 
 import { render, screen } from '../../test-utils'
 
-
 describe('DiscardEvidenceModal', () => {
   it('matches snapshot when open', () => {
     const { container } = render(

@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
 
-
 import { SourceChip } from '@/modules/evidence/components/ReportedEvidenceTable/SourceChip'
 import { EvidenceSource } from '@/modules/evidence/types'
 

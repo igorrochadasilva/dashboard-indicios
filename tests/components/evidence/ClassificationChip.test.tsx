@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
 
-
 import { ClassificationChip } from '@/modules/evidence/components/ReportedEvidenceTable/ClassificationChip'
 import { EvidenceClassification } from '@/modules/evidence/types'
 

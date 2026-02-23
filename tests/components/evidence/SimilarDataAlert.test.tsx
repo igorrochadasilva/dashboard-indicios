@@ -4,7 +4,6 @@ import { SimilarDataAlert } from '@/modules/evidence/components/CreateEvidenceSe
 
 import { render } from '../../test-utils'
 
-
 describe('SimilarDataAlert', () => {
   it('matches snapshot', () => {
     const { container } = render(<SimilarDataAlert />)

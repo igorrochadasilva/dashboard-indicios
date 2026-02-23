@@ -4,7 +4,6 @@ import { EvidenceConfirmModal } from '@/modules/evidence/components/EvidenceConf
 
 import { render, screen } from '../../test-utils'
 
-
 describe('EvidenceConfirmModal', () => {
   it('matches snapshot when open', () => {
     const { container } = render(

@@ -4,7 +4,6 @@ import { SuccessCheckIcon } from '@/shared/components/Icons/SuccessCheckIcon'
 
 import { render } from '../../test-utils'
 
-
 describe('SuccessCheckIcon', () => {
   it('matches snapshot with default size', () => {
     const { container } = render(<SuccessCheckIcon />)

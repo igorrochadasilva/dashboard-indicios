@@ -4,7 +4,6 @@ import { Toast } from '@/shared/components/Toast/Toast'
 
 import { render, screen } from '../../test-utils'
 
-
 describe('Toast', () => {
   it('matches snapshot (error variant)', () => {
     const { container } = render(

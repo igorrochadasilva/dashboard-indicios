@@ -4,7 +4,6 @@ import { SimilarEvidenceModal } from '@/modules/evidence/components/SimilarEvide
 
 import { render, screen } from '../../test-utils'
 
-
 describe('SimilarEvidenceModal', () => {
   it('matches snapshot when open', () => {
     const { container } = render(

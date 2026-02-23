@@ -4,7 +4,6 @@ import { BellIcon } from '@/shared/components/Icons/BellIcon'
 
 import { render } from '../../test-utils'
 
-
 describe('BellIcon', () => {
   it('matches snapshot', () => {
     const { container } = render(<BellIcon />)

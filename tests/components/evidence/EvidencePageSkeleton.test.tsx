@@ -4,7 +4,6 @@ import { EvidencePageSkeleton } from '@/modules/evidence/components/EvidencePage
 
 import { render } from '../../test-utils'
 
-
 describe('EvidencePageSkeleton', () => {
   it('matches snapshot', () => {
     const { container } = render(<EvidencePageSkeleton />)

@@ -4,7 +4,6 @@ import { ActivityChartSkeleton } from '@/modules/evidence/components/EvidencePag
 
 import { render } from '../../test-utils'
 
-
 describe('ActivityChartSkeleton', () => {
   it('matches snapshot', () => {
     const { container } = render(<ActivityChartSkeleton />)
