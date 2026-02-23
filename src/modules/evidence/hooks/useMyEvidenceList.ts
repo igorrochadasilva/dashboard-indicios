@@ -23,6 +23,7 @@ export function useMyEvidenceList() {
   const evidences = evidencesQuery.data?.data ?? []
   const totalCount = evidencesQuery.data?.totalCount ?? 0
   const isEvidencesLoading = evidencesQuery.isLoading
+  const isEvidencesFetching = evidencesQuery.isFetching
 
   const handleApplyFilters = (values: EvidenceListFilters) => {
     setFilterTransactionId(values.transactionId)
@@ -40,6 +41,7 @@ export function useMyEvidenceList() {
     evidences,
     totalCount,
     isEvidencesLoading,
+    isEvidencesFetching,
     page,
     rowsPerPage,
     setPage,

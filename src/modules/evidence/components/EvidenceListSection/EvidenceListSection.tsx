@@ -9,6 +9,7 @@ export function EvidenceListSection() {
     evidences,
     totalCount,
     isEvidencesLoading,
+    isEvidencesFetching,
     page,
     rowsPerPage,
     setPage,
@@ -22,6 +23,7 @@ export function EvidenceListSection() {
       <EvidenceFilters
         onApply={handleApplyFilters}
         onClear={handleClearFilters}
+        loading={isEvidencesFetching}
       />
       {isEvidencesLoading ? (
         <EvidenceTableSkeleton />

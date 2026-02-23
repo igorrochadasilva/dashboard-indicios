@@ -1,4 +1,4 @@
-import { formatOccurrenceDateForApi } from '../api'
+import { formatOccurrenceDateForApi } from '@/app/api'
 
 import type { CreateEvidenceFormValues } from '../schema'
 import type { CreateEvidencePayload } from '../types'

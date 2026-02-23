@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getEvidences } from '../../api'
+import { getEvidences } from '@/app/api'
 
 import type { GetEvidencesParams } from '../../types'
 

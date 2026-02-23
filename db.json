@@ -404,6 +404,42 @@
       "transactionId": "gen-1771809894200-2iql01n",
       "executorName": "",
       "executorDocument": ""
+    },
+    {
+      "id": "5b34",
+      "occurrenceDate": "10/10/2040 às 10:01:00",
+      "transactionValue": "100",
+      "occurrenceChannel": "",
+      "institutionCnpj": "86.319.890/0001-14",
+      "institutionName": "Data Rudder LTDA",
+      "relatedActivity": "doc",
+      "classification": "fraudAttempt",
+      "reason": "teste",
+      "contractValue": "200",
+      "typableLine": "teste",
+      "occurrencePlace": "casa",
+      "source": "form",
+      "transactionId": "gen-1771854050347-2d9je7f",
+      "executorName": "",
+      "executorDocument": ""
+    },
+    {
+      "id": "8090",
+      "occurrenceDate": "10/10/2010 às 10:10:00",
+      "transactionValue": "100",
+      "occurrenceChannel": "",
+      "institutionCnpj": "86.319.890/0001-14",
+      "institutionName": "Data Rudder LTDA",
+      "relatedActivity": "doc",
+      "classification": "fraudOccurrence",
+      "reason": "teste",
+      "contractValue": "200",
+      "typableLine": "teste",
+      "occurrencePlace": "teste 2",
+      "source": "form",
+      "transactionId": "gen-1771854081228-1bv9zf4",
+      "executorName": "",
+      "executorDocument": ""
     }
   ],
   "activities": [

@@ -4,7 +4,8 @@ import {
   checkDuplicateEvidence,
   createEvidence,
   DuplicateEvidenceError,
-} from '../../api'
+} from '@/app/api'
+
 import { buildCreatePayload } from '../../utils'
 import { EVIDENCES_QUERY_KEY } from '../query/useEvidences'
 

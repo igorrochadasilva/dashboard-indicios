@@ -4,29 +4,23 @@ import type {
   GetEvidencesParams,
   GetEvidencesResult,
   ReportedEvidenceRow,
-  SubmissionsByActivityDataPoint,
-} from './types'
+} from '@/modules/evidence/types'
 
-/** Erro lançado quando já existe indício com mesma data e valor (duplicata). */
-export class DuplicateEvidenceError extends Error {
-  constructor() {
-    super('Já existe indício com mesma data e valor da transação.')
-    this.name = 'DuplicateEvidenceError'
-  }
-}
+import { endpoints } from '../config'
 
-const BASE = 'http://localhost:3001'
+import { formatOccurrenceDateForApi, toCanonicalDate } from './dateUtils'
 
-const endpoints = {
-  evidences: `${BASE}/evidences`,
-  activities: `${BASE}/activities`,
-}
+export { formatOccurrenceDateForApi } from './dateUtils'
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`)
-  return res.json() as Promise<T>
-}
+type EvidencesApiResponse =
+  | ReportedEvidenceRow[]
+  | {
+      data: ReportedEvidenceRow[]
+      items?: number
+      first?: number
+      last?: number
+      pages?: number
+    }
 
 function buildEvidencesUrl(params: GetEvidencesParams): string {
   const search = new URLSearchParams()
@@ -42,16 +36,6 @@ function buildEvidencesUrl(params: GetEvidencesParams): string {
   }
   return `${endpoints.evidences}?${search.toString()}`
 }
-
-type EvidencesApiResponse =
-  | ReportedEvidenceRow[]
-  | {
-      data: ReportedEvidenceRow[]
-      items?: number
-      first?: number
-      last?: number
-      pages?: number
-    }
 
 export async function getEvidences(
   params: GetEvidencesParams = {}
@@ -69,37 +53,6 @@ export async function getEvidences(
   const data = json.data ?? []
   const totalCount = json.items ?? data.length
   return { data, totalCount }
-}
-
-export async function getActivities(): Promise<
-  SubmissionsByActivityDataPoint[]
-> {
-  return fetchJson<SubmissionsByActivityDataPoint[]>(endpoints.activities)
-}
-
-/**
- * Formata "YYYY-MM-DDTHH:mm" (datetime-local) para "DD/MM/YYYY às HH:mm:00".
- */
-export function formatOccurrenceDateForApi(occurrenceDateTime: string): string {
-  if (!occurrenceDateTime) return ''
-  const d = new Date(occurrenceDateTime)
-  const day = String(d.getDate()).padStart(2, '0')
-  const month = String(d.getMonth() + 1).padStart(2, '0')
-  const year = d.getFullYear()
-  const hours = String(d.getHours()).padStart(2, '0')
-  const minutes = String(d.getMinutes()).padStart(2, '0')
-  return `${day}/${month}/${year} às ${hours}:${minutes}:00`
-}
-
-/**
- * Reduz data ao formato canônico "DD/MM/YYYY HH:mm" para comparação (evita problema de encoding "às" e segundos).
- */
-function toCanonicalDate(occurrenceDateStr: string): string {
-  const s = (occurrenceDateStr ?? '').trim()
-  if (!s) return ''
-  const withoutSeconds = s.replace(/:(\d{2})$/, '')
-  const withoutAux = withoutSeconds.replace(/\s*às\s*/i, ' ')
-  return withoutAux.trim()
 }
 
 /**

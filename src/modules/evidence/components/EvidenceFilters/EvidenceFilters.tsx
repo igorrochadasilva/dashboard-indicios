@@ -25,11 +25,16 @@ export type EvidenceFiltersValues = {
 export type EvidenceFiltersProps = {
   onApply?: (values: EvidenceFiltersValues) => void
   onClear?: () => void
+  loading?: boolean
 }
 
 const t = texts.myEvidence
 
-export function EvidenceFilters({ onApply, onClear }: EvidenceFiltersProps) {
+export function EvidenceFilters({
+  onApply,
+  onClear,
+  loading = false,
+}: EvidenceFiltersProps) {
   const theme = useTheme()
   const custom = (
     theme.palette as {
@@ -199,6 +204,7 @@ export function EvidenceFilters({ onApply, onClear }: EvidenceFiltersProps) {
           variant="contained"
           color="primary"
           onClick={handleApply}
+          loading={loading}
           sx={{
             width: 154,
             height: 40,
