@@ -18,6 +18,11 @@ declare module '@mui/material/styles' {
       toastBg: string
       toastTitle: string
       toastBorder: string
+      successToastBg: string
+      successToastText: string
+      successToastBorder: string
+      similarAlertBg: string
+      similarAlertText: string
     }
   }
 
@@ -40,6 +45,11 @@ declare module '@mui/material/styles' {
       toastBg?: string
       toastTitle?: string
       toastBorder?: string
+      successToastBg?: string
+      successToastText?: string
+      successToastBorder?: string
+      similarAlertBg?: string
+      similarAlertText?: string
     }
   }
 }
