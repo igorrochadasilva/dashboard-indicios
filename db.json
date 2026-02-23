@@ -386,6 +386,24 @@
       "transactionId": "gen-1771808967883-2in5kfg",
       "executorName": "",
       "executorDocument": ""
+    },
+    {
+      "id": "0e80",
+      "occurrenceDate": "10/10/2026 às 10:10:00",
+      "transactionValue": "100",
+      "occurrenceChannel": "",
+      "institutionCnpj": "86.319.890/0001-14",
+      "institutionName": "Data Rudder LTDA",
+      "relatedActivity": "ted",
+      "classification": "fraudOccurrence",
+      "reason": "teste",
+      "contractValue": "200",
+      "typableLine": "teste",
+      "occurrencePlace": "casa",
+      "source": "form",
+      "transactionId": "gen-1771809894200-2iql01n",
+      "executorName": "",
+      "executorDocument": ""
     }
   ],
   "activities": [
