@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BellIcon > matches snapshot 1`] = `
+<img
+  alt=""
+  class="MuiBox-root css-g9i05x"
+  src="/mock-icon.svg"
+/>
+`;

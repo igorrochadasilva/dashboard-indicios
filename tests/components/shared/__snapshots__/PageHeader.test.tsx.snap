@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PageHeader > matches snapshot with action button 1`] = `
+<div
+  class="MuiBox-root css-1bntj9o"
+>
+  <h1
+    class="MuiTypography-root MuiTypography-body1 css-6cjhh0-MuiTypography-root"
+  >
+    Meus indícios
+  </h1>
+  <a
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-jbn700-MuiButtonBase-root-MuiButton-root"
+    data-discover="true"
+    href="/criar-indicio"
+    tabindex="0"
+  >
+    <span
+      class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1v1j2p3-MuiButton-startIcon"
+    >
+      <img
+        alt=""
+        class="MuiBox-root css-fwkf91"
+        src="/mock-icon.svg"
+      />
+    </span>
+    Novo indício
+  </a>
+</div>
+`;
+
+exports[`PageHeader > matches snapshot with title only 1`] = `
+<div
+  class="MuiBox-root css-1bntj9o"
+>
+  <h1
+    class="MuiTypography-root MuiTypography-body1 css-6cjhh0-MuiTypography-root"
+  >
+    Meus indícios
+  </h1>
+</div>
+`;

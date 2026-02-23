@@ -15,5 +15,7 @@ export default defineConfig({
   test: {
     passWithNoTests: true,
     environment: 'jsdom',
+    setupFiles: ['./tests/setup.ts'],
+    include: ['tests/**/*.{test,spec}.{ts,tsx}'],
   },
 })

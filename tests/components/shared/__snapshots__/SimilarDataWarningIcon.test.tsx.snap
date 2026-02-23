@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SimilarDataWarningIcon > matches snapshot 1`] = `
+<img
+  alt=""
+  class="MuiBox-root css-1hnppwq"
+  src="/mock-icon.svg"
+/>
+`;

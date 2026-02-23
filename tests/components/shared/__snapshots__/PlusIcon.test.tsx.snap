@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PlusIcon > matches snapshot 1`] = `
+<img
+  alt=""
+  class="MuiBox-root css-fwkf91"
+  src="/mock-icon.svg"
+/>
+`;

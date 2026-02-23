@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SourceChip > matches snapshot for csv source 1`] = `
+<div
+  class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-j1yrxq-MuiChip-root"
+>
+  <span
+    class="MuiChip-label MuiChip-labelSmall css-eccknh-MuiChip-label"
+  >
+    CSV
+  </span>
+</div>
+`;
+
+exports[`SourceChip > matches snapshot for form source 1`] = `
+<div
+  class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1nsy20n-MuiChip-root"
+>
+  <span
+    class="MuiChip-label MuiChip-labelSmall css-eccknh-MuiChip-label"
+  >
+    Formulário
+  </span>
+</div>
+`;

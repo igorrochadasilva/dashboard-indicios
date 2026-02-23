@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ClassificationChip > matches snapshot for fraud attempt 1`] = `
+<div
+  class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-g9g4hd-MuiChip-root"
+>
+  <span
+    class="MuiChip-label MuiChip-labelSmall css-eccknh-MuiChip-label"
+  >
+    Tentativa de fraude
+  </span>
+</div>
+`;
+
+exports[`ClassificationChip > matches snapshot for fraud occurrence 1`] = `
+<div
+  class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-3nqh53-MuiChip-root"
+>
+  <span
+    class="MuiChip-label MuiChip-labelSmall css-eccknh-MuiChip-label"
+  >
+    Ocorrência de fraude
+  </span>
+</div>
+`;

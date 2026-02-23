@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SuccessCheckIcon > matches snapshot with custom size 1`] = `
+<img
+  alt=""
+  class="MuiBox-root css-1g16et8"
+  src="/mock-icon.svg"
+/>
+`;
+
+exports[`SuccessCheckIcon > matches snapshot with default size 1`] = `
+<img
+  alt=""
+  class="MuiBox-root css-1ks11tb"
+  src="/mock-icon.svg"
+/>
+`;

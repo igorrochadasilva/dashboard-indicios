@@ -1,0 +1,99 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Toast > matches snapshot (error variant) 1`] = `
+<div
+  class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomRight css-clpzrl-MuiSnackbar-root"
+  role="presentation"
+>
+  <span
+    class="MuiBox-root css-1obf64m"
+    direction="up"
+    style="opacity: 1; transform: scale(1, 1); transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 css-1png1mw-MuiPaper-root"
+      style="--Paper-shadow: none;"
+    >
+      <div
+        class="MuiBox-root css-u36x6n"
+      />
+      <div
+        class="MuiBox-root css-92ieag"
+      >
+        <div
+          class="MuiBox-root css-1o3x4gz"
+        >
+          <img
+            alt=""
+            class="MuiBox-root css-1mxy20n"
+            src="/mock-icon.svg"
+          />
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-rlruh0-MuiTypography-root"
+          >
+            Erro
+          </p>
+          <button
+            aria-label="Fechar"
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1x6gz4i-MuiButtonBase-root-MuiIconButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <img
+              alt=""
+              class="MuiBox-root css-mufsco"
+              src="/mock-icon.svg"
+            />
+          </button>
+        </div>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-c9rebp-MuiTypography-root"
+        >
+          Algo deu errado.
+        </p>
+      </div>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`Toast > matches snapshot (success variant) 1`] = `
+<div
+  class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomRight css-clpzrl-MuiSnackbar-root"
+  role="presentation"
+>
+  <span
+    class="MuiBox-root css-1obf64m"
+    direction="up"
+    style="opacity: 1; transform: scale(1, 1); transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 css-ojsvbs-MuiPaper-root"
+      style="--Paper-shadow: none;"
+    >
+      <img
+        alt=""
+        class="MuiBox-root css-1ks11tb"
+        src="/mock-icon.svg"
+      />
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-13fu1d-MuiTypography-root"
+      >
+        Indício criado com sucesso.
+      </p>
+      <button
+        aria-label="Fechar"
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-2mbkz9-MuiButtonBase-root-MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <img
+          alt=""
+          class="MuiBox-root css-mufsco"
+          src="/mock-icon.svg"
+        />
+      </button>
+    </div>
+  </span>
+</div>
+`;
