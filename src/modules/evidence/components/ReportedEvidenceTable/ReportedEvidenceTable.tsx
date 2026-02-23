@@ -43,8 +43,8 @@ export function ReportedEvidenceTable({
       custom?: { tableRowStriped?: string; filterBoxBorder?: string }
     }
   ).custom
-  const stripedBg = custom?.tableRowStriped ?? '#F9FAFB'
-  const borderColor = custom?.filterBoxBorder ?? '#DEDEE2'
+  const stripedBg = custom?.tableRowStriped ?? ''
+  const borderColor = custom?.filterBoxBorder ?? ''
 
   return (
     <Box>

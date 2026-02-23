@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getActivities } from '../api'
+import { getActivities } from '../../api'
 
 const ACTIVITIES_QUERY_KEY = ['activities']
 

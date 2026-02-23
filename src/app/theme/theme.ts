@@ -69,6 +69,8 @@ const theme = createTheme({
       successToastBg: '#E8F5E9',
       successToastText: '#1B7331',
       successToastBorder: 'rgba(27, 115, 49, 0.3)',
+      similarAlertBg: '#FDF4EA',
+      similarAlertText: '#6B4212',
     },
   },
   typography: {

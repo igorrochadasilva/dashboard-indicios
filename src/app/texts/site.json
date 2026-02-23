@@ -38,6 +38,15 @@
     },
     "rowsPerPageLabel": "Linhas por página:",
     "submissionsByActivityTitle": "Envios por atividade relacionada",
+    "chartLegendOrder": [
+      "aberturaConta",
+      "contratacaoCredito",
+      "manutencaoConta",
+      "pagamento",
+      "pix",
+      "saque",
+      "transferencia"
+    ],
     "chartLegend": {
       "aberturaConta": "Abertura de conta",
       "contratacaoCredito": "Contratação de crédito",

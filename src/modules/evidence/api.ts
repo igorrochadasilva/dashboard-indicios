@@ -7,6 +7,14 @@ import type {
   SubmissionsByActivityDataPoint,
 } from './types'
 
+/** Erro lançado quando já existe indício com mesma data e valor (duplicata). */
+export class DuplicateEvidenceError extends Error {
+  constructor() {
+    super('Já existe indício com mesma data e valor da transação.')
+    this.name = 'DuplicateEvidenceError'
+  }
+}
+
 const BASE = 'http://localhost:3001'
 
 const endpoints = {

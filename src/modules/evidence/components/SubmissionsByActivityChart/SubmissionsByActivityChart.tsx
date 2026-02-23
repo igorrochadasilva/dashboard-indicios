@@ -15,15 +15,10 @@ import { texts } from '@/app/texts'
 
 import type { SubmissionsByActivityDataPoint } from './types'
 
-const LEGEND_ORDER: (keyof Omit<SubmissionsByActivityDataPoint, 'date'>)[] = [
-  'aberturaConta',
-  'contratacaoCredito',
-  'manutencaoConta',
-  'pagamento',
-  'pix',
-  'saque',
-  'transferencia',
-]
+type ChartDataKey = keyof Omit<SubmissionsByActivityDataPoint, 'date'>
+
+const getLegendOrder = (): ChartDataKey[] =>
+  (texts.myEvidence.chartLegendOrder as ChartDataKey[]) ?? []
 
 type SubmissionsByActivityChartProps = {
   data?: SubmissionsByActivityDataPoint[]
@@ -33,6 +28,7 @@ export function SubmissionsByActivityChart({
   data = [],
 }: SubmissionsByActivityChartProps) {
   const theme = useTheme()
+  const legendOrder = getLegendOrder()
   const custom = (
     theme.palette as {
       custom?: {
@@ -44,16 +40,17 @@ export function SubmissionsByActivityChart({
       }
     }
   ).custom
-  const borderColor = custom?.filterBoxBorder ?? '#DEDEE2'
+
+  const borderColor = custom?.filterBoxBorder
   const legendLabels = texts.myEvidence.chartLegend
   const barColors: Record<string, string> = {
     aberturaConta: theme.palette.primary.main,
     contratacaoCredito: theme.palette.warning.main,
-    manutencaoConta: custom?.chartManutencaoConta ?? '#778C44',
+    manutencaoConta: custom?.chartManutencaoConta ?? '',
     pagamento: theme.palette.error.main,
-    pix: custom?.chartPix ?? '#469D43',
-    saque: custom?.chartSaque ?? '#B6D2BD',
-    transferencia: custom?.olive ?? '#9CAB76',
+    pix: custom?.chartPix ?? '',
+    saque: custom?.chartSaque ?? '',
+    transferencia: custom?.olive ?? '',
   }
 
   const dataWithZeros = data.map((d) => ({
@@ -161,7 +158,7 @@ export function SubmissionsByActivityChart({
               iconType="square"
               iconSize={10}
             />
-            {LEGEND_ORDER.map((dataKey) => (
+            {legendOrder.map((dataKey) => (
               <Bar
                 key={dataKey}
                 dataKey={dataKey}

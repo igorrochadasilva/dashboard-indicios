@@ -7,6 +7,7 @@ export { MonogramIcon } from './MonogramIcon'
 export { PlusIcon } from './PlusIcon'
 export { EllipsisIcon } from './EllipsisIcon'
 export { SearchIcon } from './SearchIcon'
+export { SimilarDataWarningIcon } from './SimilarDataWarningIcon'
 
 import { HomeIcon } from './HomeIcon'
 import { MonitoringIcon } from './MonitoringIcon'

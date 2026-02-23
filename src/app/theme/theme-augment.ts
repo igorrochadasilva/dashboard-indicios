@@ -21,6 +21,8 @@ declare module '@mui/material/styles' {
       successToastBg: string
       successToastText: string
       successToastBorder: string
+      similarAlertBg: string
+      similarAlertText: string
     }
   }
 
@@ -46,6 +48,8 @@ declare module '@mui/material/styles' {
       successToastBg?: string
       successToastText?: string
       successToastBorder?: string
+      similarAlertBg?: string
+      similarAlertText?: string
     }
   }
 }

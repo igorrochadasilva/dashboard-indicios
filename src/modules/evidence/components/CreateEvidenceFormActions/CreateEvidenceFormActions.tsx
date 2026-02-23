@@ -8,12 +8,14 @@ export type CreateEvidenceFormActionsProps = {
   onDiscard: () => void
   onSubmit: () => void
   disabled?: boolean
+  isSubmitting?: boolean
 }
 
 export function CreateEvidenceFormActions({
   onDiscard,
   onSubmit,
   disabled = false,
+  isSubmitting = false,
 }: CreateEvidenceFormActionsProps) {
   const theme = useTheme()
   const buttonTextSx = {
@@ -73,6 +75,7 @@ export function CreateEvidenceFormActions({
           color="primary"
           disabled={disabled}
           onClick={onSubmit}
+          loading={isSubmitting}
           sx={{
             width: 168,
             height: 40,

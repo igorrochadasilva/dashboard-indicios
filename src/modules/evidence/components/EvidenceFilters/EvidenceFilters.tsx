@@ -36,8 +36,8 @@ export function EvidenceFilters({ onApply, onClear }: EvidenceFiltersProps) {
       custom?: { filterBoxBorder?: string; inputMuted?: string }
     }
   ).custom
-  const filterBoxBorder = custom?.filterBoxBorder ?? '#DEDEE2'
-  const inputMuted = custom?.inputMuted ?? '#A1A1A4'
+  const filterBoxBorder = custom?.filterBoxBorder ?? ''
+  const inputMuted = custom?.inputMuted ?? ''
 
   const [transactionId, setTransactionId] = useState('')
   const [classification, setClassification] = useState('')

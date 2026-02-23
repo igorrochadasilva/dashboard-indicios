@@ -14,7 +14,7 @@ const headerCellSx = {
 export function ReportedEvidenceTableHeader() {
   const theme = useTheme()
   const custom = (theme.palette as { custom?: { tableHeader?: string } }).custom
-  const headerColor = custom?.tableHeader ?? '#646466'
+  const headerColor = custom?.tableHeader ?? ''
   const col = texts.myEvidence.tableColumns
 
   return (
